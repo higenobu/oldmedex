@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+    <option name="ANALYSIS_IN_BACKGROUND" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="32ddcce3-e6c4-458e-b347-f32b88467844" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/.idea/therapist.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/u/therapist/.idea/therapist.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/u/therapist/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/u/therapist/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/u/therapist/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/nexec-3.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/nexec-4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/nexec-5.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/nexec-6.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/nexec-7.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/norder-0.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/norder-1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/u/therapist/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/u/therapist/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/lib/u/therapist/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../src/u/therapist/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/u/therapist/nexec-7.php" afterPath="$PROJECT_DIR$/lib/u/therapist/nexec-7.php" />
+    </list>
+    <ignored path="html.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="html" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ppupdate.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/u/manage/ppupdate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.85714287" vertical-offset="450" max-vertical-offset="3915">
+              <folding>
+                <marker date="1398360147770" expanded="true" signature="1330:1352" placeholder="select * fro..attrlist..." />
+                <marker date="1398360147770" expanded="true" signature="1606:1728" placeholder="SELECT patie..otatest_order..." />
+                <marker date="1398360147770" expanded="true" signature="2340:2507" placeholder="select patie..otatest_order..." />
+                <marker date="1398360147770" expanded="true" signature="2700:2882" placeholder="SELECT * FRO..otatest_order..." />
+                <marker date="1398360147770" expanded="true" signature="3691:3804" placeholder="update otate..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/u/manage/cmbsw1.php" />
+        <option value="$PROJECT_DIR$/lib/u/doctor/korder.php" />
+        <option value="$PROJECT_DIR$/lib/u/doctor/pdf44-0427.php" />
+        <option value="$PROJECT_DIR$/u/manage/cmbmv.php" />
+        <option value="$PROJECT_DIR$/u/manage/cmbread.php" />
+        <option value="$PROJECT_DIR$/u/manage/cmbupdate.php" />
+        <option value="$PROJECT_DIR$/u/manage/phpclient.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="185" />
+    <option name="y" value="251" />
+    <option name="width" value="1260" />
+    <option name="height" value="976" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="u" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="u" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../src/u/therapist" />
+    <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="File.Encoding" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="restartRequiresConfirmation" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/u/manage" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.addgoigoku.php">
+    <configuration default="false" name="login.php" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/html/login.php">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="addgoigoku.php" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/html/u/manage/addgoigoku.php">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.login.php" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.addgoigoku.php" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.addgoigoku.php" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.login.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32ddcce3-e6c4-458e-b347-f32b88467844" name="Default" comment="" />
+      <created>1398553120059</created>
+      <updated>1398553120059</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="185" y="251" width="1260" height="976" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960254" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993174" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3993174" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/pdf44.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="21" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="4560">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/pdf45.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="17130">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="4" selection-start="1889" selection-end="1889" vertical-scroll-proportion="31.75" vertical-offset="1737" max-vertical-offset="2565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/addgoigoku.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.444238" vertical-offset="777" max-vertical-offset="1605">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/pdf45.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="494" selection-end="494" vertical-scroll-proportion="26.25" vertical-offset="945" max-vertical-offset="17130">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/korder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4425">
+          <folding>
+            <marker date="1395448188153" expanded="true" signature="-1:-1" placeholder="select &quot;��&quot; ..������Ģ..." />
+            <marker date="1395448188153" expanded="true" signature="-1:-1" placeholder="select &quot;ID&quot; ..test_course..." />
+            <marker date="1395448188153" expanded="true" signature="-1:-1" placeholder="select E.&quot;${..modalities..." />
+            <marker date="1395448188153" expanded="true" signature="-1:-1" placeholder="select E.&quot;${..modalities..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/ndk_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="89595">
+          <folding>
+            <element signature="e#6#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/inventm-app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="852">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/otatest2_lcm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="86700">
+          <folding>
+            <element signature="e#6#45#0" expanded="false" />
+            <marker date="1387667601094" expanded="true" signature="-1:-1" placeholder="select &quot;姓&quot; |..職員台帳..." />
+            <marker date="1387667601094" expanded="true" signature="-1:-1" placeholder="SELECT &quot;Obje..otatest_order..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/otatest_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="71205">
+          <folding>
+            <marker date="1397761898226" expanded="true" signature="-1:-1" placeholder="select &quot;姓&quot; |..職員台帳..." />
+            <marker date="1397761898226" expanded="true" signature="-1:-1" placeholder="SELECT &quot;Obje..otatest_order..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/otatest2_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="9.375" vertical-offset="225" max-vertical-offset="88710">
+          <folding>
+            <element signature="e#6#45#0" expanded="false" />
+            <marker date="1397763175229" expanded="true" signature="-1:-1" placeholder="select &quot;��&quot; ..������Ģ..." />
+            <marker date="1397763175229" expanded="true" signature="-1:-1" placeholder="SELECT &quot;Obje..otatest_order..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/otatest2_order0417lcm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="89550">
+          <folding>
+            <element signature="e#6#45#0" expanded="false" />
+            <marker date="1397758269231" expanded="true" signature="-1:-1" placeholder="select &quot;名&quot; |..職員台帳..." />
+            <marker date="1397758269231" expanded="true" signature="-1:-1" placeholder="SELECT &quot;Obje..otatest_order..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/pdf44.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="45" selection-start="2108" selection-end="2108" vertical-scroll-proportion="-19.583334" vertical-offset="880" max-vertical-offset="4560">
+          <folding>
+            <marker date="1398472283776" expanded="true" signature="-1:-1" placeholder="SELECT * fro..attrlist..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/pdf44-osato-0425.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="55" selection-start="1350" selection-end="1350" vertical-scroll-proportion="-6.875" vertical-offset="720" max-vertical-offset="13035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/u/doctor/pdf44-0427.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="291" column="22" selection-start="7382" selection-end="7382" vertical-scroll-proportion="-26.375" vertical-offset="3732" max-vertical-offset="4560">
+          <folding>
+            <marker date="1398557564281" expanded="true" signature="-1:-1" placeholder="SELECT * fro..attrlist..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbmvnow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-7.840491" vertical-offset="6390" max-vertical-offset="27330">
+          <folding>
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="select filen..cmbfile..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="SELECT pt_id..test_resultwkcmb..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="SELECT pt_id..test_resultwkcmb..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="select patie..otatest_order..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="SELECT patie..otatest_order..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="SELECT &quot;ID&quot;,..otatest_order..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="update otate..." />
+            <marker date="1362552504589" expanded="true" signature="-1:-1" placeholder="update test_..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbmv-now.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="0" selection-start="2529" selection-end="2529" vertical-scroll-proportion="-0.7789855" vertical-offset="2205" max-vertical-offset="7125">
+          <folding>
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="SELECT pt_id..test_resultwkcmb..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="SELECT pt_id..test_resultwkcmb..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="select patie..otatest_order..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="select patie..otatest_order..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="select patie..otatest_order..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="update otate..." />
+            <marker date="1348596432365" expanded="true" signature="-1:-1" placeholder="update test_..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbmv.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="0" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.19141105" vertical-offset="579" max-vertical-offset="1965">
+          <folding>
+            <marker date="1398558965278" expanded="true" signature="-1:-1" placeholder="SELECT pt_id..test_resultwkcmb..." />
+            <marker date="1398558965278" expanded="true" signature="-1:-1" placeholder="SELECT pt_id..test_resultwkcmb..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbmvone.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="0" selection-start="1618" selection-end="1995" vertical-scroll-proportion="-18.75" vertical-offset="1260" max-vertical-offset="5355">
+          <folding>
+            <marker date="1398035666235" expanded="true" signature="-1:-1" placeholder="SELECT * fro..cmbmap..." />
+            <marker date="1398035666235" expanded="true" signature="-1:-1" placeholder="SELECT id,ka..test_resultwkcmb..." />
+            <marker date="1398035666235" expanded="true" signature="-1:-1" placeholder="SELECT id,ka..test_resultwkcmb..." />
+            <marker date="1398035666235" expanded="true" signature="-1:-1" placeholder="SELECT * fro..otatest_order..." />
+            <marker date="1398035666235" expanded="true" signature="-1:-1" placeholder="update otate..." />
+            <marker date="1398035666235" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbread.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="804" selection-end="804" vertical-scroll-proportion="-14.375" vertical-offset="45" max-vertical-offset="4065">
+          <folding>
+            <element signature="e#1755#2842#0" expanded="false" />
+            <element signature="e#1801#2829#0" expanded="false" />
+            <element signature="e#2022#2093#0" expanded="false" />
+            <element signature="e#3865#3899#0" expanded="false" />
+            <element signature="e#3907#4250#0" expanded="false" />
+            <element signature="e#5507#5586#0" expanded="false" />
+            <marker date="1398559025280" expanded="true" signature="-1:-1" placeholder="select filen..cmbfile1..." />
+            <marker date="1398559025280" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1398559025280" expanded="true" signature="-1:-1" placeholder="select filen..cmbfile..." />
+            <marker date="1398559025280" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1398559025280" expanded="true" signature="-1:-1" placeholder="select pt_no..tbl_patient2..." />
+            <marker date="1398559025280" expanded="true" signature="-1:-1" placeholder="select karte..test_resultwkcmb..." />
+            <marker date="1398559025280" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbsw.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="26.333334" vertical-offset="632" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbsw1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="517" selection-end="517" vertical-scroll-proportion="9.458333" vertical-offset="632" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbtest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="118.125" vertical-offset="2835" max-vertical-offset="3390">
+          <folding>
+            <marker date="1384230624114" expanded="true" signature="-1:-1" placeholder="select filen..cmbfile..." />
+            <marker date="1384230624114" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1384230624114" expanded="true" signature="-1:-1" placeholder="select pt_no..tbl_patient2..." />
+            <marker date="1384230624114" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/content1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/cmbupdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="2925">
+          <folding>
+            <marker date="1398559344780" expanded="true" signature="-1:-1" placeholder="update test_..." />
+            <marker date="1398559344780" expanded="true" signature="-1:-1" placeholder="select p.pt_..tbl_patient2..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/delemod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="18.75" vertical-offset="450" max-vertical-offset="1125">
+          <folding>
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396839843631" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/emppwd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="26.333334" vertical-offset="632" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/phpclient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="22" selection-start="3915" selection-end="3915" vertical-scroll-proportion="227.16667" vertical-offset="7972" max-vertical-offset="8475">
+          <folding>
+            <marker date="1398559797280" expanded="true" signature="-1:-1" placeholder="SELECT pt_no..tbl_patient..." />
+            <marker date="1398559797280" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/u/manage/ppupdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.85714287" vertical-offset="450" max-vertical-offset="3915">
+          <folding>
+            <marker date="1398360147770" expanded="true" signature="1330:1352" placeholder="select * fro..attrlist..." />
+            <marker date="1398360147770" expanded="true" signature="1606:1728" placeholder="SELECT patie..otatest_order..." />
+            <marker date="1398360147770" expanded="true" signature="2340:2507" placeholder="select patie..otatest_order..." />
+            <marker date="1398360147770" expanded="true" signature="2700:2882" placeholder="SELECT * FRO..otatest_order..." />
+            <marker date="1398360147770" expanded="true" signature="3691:3804" placeholder="update otate..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

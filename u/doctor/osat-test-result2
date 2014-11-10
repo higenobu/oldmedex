@@ -1,0 +1,25 @@
+CREATE TABLE test_result2
+(
+  "ID" bigserial NOT NULL,
+
+  "ObjectID" bigint NOT NULL DEFAULT currval('"test_result2_ID_seq"'::regclass),
+  "Superseded" timestamp without time zone,
+  "CreatedBy" bigint,
+  patient bigint,
+  patientid character varying(12),
+  kno character varying,
+  testdate character varying,
+  testcode character varying,
+  etestname character varying,
+  jtestname character varying,
+  "value" character varying,
+  result character varying,
+  unit character varying,
+  refrange character varying,
+  memo character varying
+)
+WITH (
+  OIDS=FALSE
+);
+
+

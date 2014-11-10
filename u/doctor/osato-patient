@@ -1,0 +1,30 @@
+CREATE TABLE patient
+(
+  "ID" bigserial NOT NULL,
+  
+  "patientid" character(12),
+  "lname" character varying(60),
+  "fname" character varying(60),
+  
+  "sex" character(1),
+ 
+  "bod" date,
+  "addr1" character varying(100),
+  "addr2" character varying(100),
+  "addr3" character varying(100),
+  "state" character varying (50),
+  "zip" character varying (5),
+  "tel" character varying(16),
+  "mobile" character varying(16),
+  "email" character varying(100),
+  
+  "insno" character varying(100),
+  "inscomp" character varying(100),
+  "work" character varying(100),
+ 
+  "workaddr" character varying(200),
+  "worktel" character varying(16)
+ 
+  
+);
+

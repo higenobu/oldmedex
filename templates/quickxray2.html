@@ -1,0 +1,219 @@
+<script type="text/javascript">
+<!--
+
+
+function submitStop(e){
+    if (!e) var e = window.event;
+ 
+    if(e.keyCode == 13)
+        return false;
+}
+
+
+// -->
+</script>
+<table class="quickxray">
+<thead>
+  <colgroup>
+   <col width="40px">
+   <col width="40px">
+   <col width="140px">
+   <col width="100px">
+
+   <col width="60px">
+   <col width="180px">
+   <col width="70px">
+   <col width="100px">
+   <col width="100px">
+  </colgroup>  
+</thead>
+<tbody>
+<tr><th>»Ø¼¨°å</th><td class="plain" colspan="7"><select name="@@Nshiji@@" id="@@shiji@@" onKeyPress="return disableEnterKey(this,event)">
+
+<option value="soreiyu">soreiyu</option>
+
+
+</select>
+
+
+</tr>
+
+ 
+<a href="karteview.php?SetPatient=1&PatientID=pid">Karte</a>
+ 
+<a href="patient-disease.php?SetPatient=1&PatientID=pid">byomei</a>
+
+<tr>
+  <th class="darker">ÆüÉÕ</th>
+  <td class="plain" colspan="7"><input type="hidden" name="@@NÆüÉÕ@@"
+  value="@@ÆüÉÕ@@">@@ÆüÉÕ@@</td>
+ </tr>
+<tr><th>Í½ÄêÆü</th><td colspan="7"><div style="white-space: nowrap"><script>var calend = new MedexCalendarPopup("div-soe-a5aaa1bca5c0bdaacebbc6fc");</script>
+<div id="div-soe-a5aaa1bca5c0bdaacebbc6fc" class="soecal" style="position:absolute; visibility:hidden"></div>
+<input type="text" onKeyPress="return disableEnterKey(this,event)" id="soe-a5aaa1bca5c0bdaacebbc6fc" name="@@Nyotei@@" value="@@yotei@@">
+<a href="#" onclick="calend.select(document.getElementById('soe-a5aaa1bca5c0bdaacebbc6fc'),'anchor-soe-a5aaa1bca5c0bdaacebbc6fc', 'yyyy-MM-dd'); return false;" id="anchor-soe-a5aaa1bca5c0bdaacebbc6fc" name="anchor-soe-a5aaa1bca5c0bdaacebbc6fc" >*</a></div></td></tr>
+
+ <tr>
+  <th class="darker">ÌÜÅª</th>
+ 
+  <td class="plain" colspan="7"><input type="text" name="@@Nmokuteki@@"
+  value="@@mokuteki@@" onKeyPress="return submitStop(event);"></td>
+ </tr>
+
+<tr>
+  <th class="darker">stop</th>
+  <td class="plain" colspan="7"><input type="text" name="@@Nstop@@"
+  value="@@stop@@"></td>
+ </tr>
+ <tr>
+  <th class="heading" colspan="2">Éô°Ì</th>
+  <th class="heading" colspan="2">Êý¸þ</th>
+  <th class="heading" colspan="2">Éô°Ì</th>
+  <th class="heading" colspan="2">Êý¸þ</th>
+ </tr>
+
+ <tr>
+  <td class="plain">Ã±½ãÆ¬Éô</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@NÃ±½ãÆ¬Éô.1@@" @@Ã±½ãÆ¬Éô.1@@
+   >-<input type="checkbox" name="@@NÃ±½ãÆ¬Éô.2@@" @@Ã±½ãÆ¬Éô.2@@
+>+<input type="checkbox" name="@@NÃ±½ãÆ¬Éô.3@@" @@Ã±½ãÆ¬Éô.3@@
+   >¡Þ</td>
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@NÃ±½ãÆ¬Éô.T@@" value="@@Ã±½ãÆ¬Éô.T@@"></td>
+ 
+ <td class="plain">Â¤±ÆÆ¬Éô</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@NÂ¤±ÆÆ¬Éô.1@@" @@Â¤±ÆÆ¬Éô.1@@
+ >-<input type="checkbox" name="@@NÂ¤±ÆÆ¬Éô.2@@" @@Â¤±ÆÆ¬Éô.2@@
+ >+<input type="checkbox" name="@@NÂ¤±ÆÆ¬Éô.3@@" @@Â¤±ÆÆ¬Éô.3@@
+    >¡Þ</td>
+  
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@NÂ¤±ÆÆ¬Éô.T@@" value="@@Â¤±ÆÆ¬Éô.T@@"></td>
+ </tr>
+
+ <tr>
+  <td class="darker">Ã±½ã¶»Éô</td>
+  <td class="darker"></td>
+  <td class="plain"><input type="checkbox" name="@@NÃ±½ã¶»Éô.1@@" @@Ã±½ã¶»Éô.1@@
+   >-<input type="checkbox" name="@@NÃ±½ã¶»Éô.2@@" @@Ã±½ã¶»Éô.2@@
+>+<input type="checkbox" name="@@NÃ±½ã¶»Éô.3@@" @@Ã±½ã¶»Éô.3@@
+   >¡Þ</td>
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@NÃ±½ã¶»Éô.T@@" value="@@Ã±½ã¶»Éô.T@@"></td>
+
+  <td class="darker">Â¤±Æ¶»Éô</td>
+  <td class="darker"></td>
+  <td class="darker"><input type="checkbox" name="@@NÂ¤±Æ¶»Éô.1@@" @@Â¤±Æ¶»Éô.1@@
+   >-<input type="checkbox" name="@@NÂ¤±Æ¶»Éô.2@@" @@Â¤±Æ¶»Éô.2@@
+>+<input type="checkbox" name="@@NÂ¤±Æ¶»Éô.3@@" @@Â¤±Æ¶»Éô.3@@
+   >¡Þ</td>
+  
+  <td class="darker"><input type="text" class="dirtext"
+      name="@@NÂ¤±Æ¶»Éô.T@@" value="@@Â¤±Æ¶»Éô.T@@"></td>
+ </tr>
+
+ <tr>
+  <td class="plain">Ã±½ãÊ¢Éô</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@NÃ±½ãÊ¢Éô.1@@" @@Ã±½ãÊ¢Éô.1@@
+>-<input type="checkbox" name="@@NÃ±½ãÊ¢Éô.2@@" @@Ã±½ãÊ¢Éô.2@@
+>+<input type="checkbox" name="@@NÃ±½ãÊ¢Éô.3@@" @@Ã±½ãÊ¢Éô.3@@
+   >¡Þ</td>
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@NÃ±½ãÊ¢Éô.T@@" value="@@Ã±½ãÊ¢Éô.T@@"></td>
+  <td class="plain">Â¤±ÆÊ¢Éô</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@NÂ¤±ÆÊ¢Éô.1@@" @@Â¤±ÆÊ¢Éô.1@@
+   >-<input type="checkbox" name="@@NÂ¤±ÆÊ¢Éô.2@@" @@Â¤±ÆÊ¢Éô.2@@
+>+<input type="checkbox" name="@@NÂ¤±ÆÊ¢Éô.3@@" @@Â¤±ÆÊ¢Éô.3@@
+   >¡Þ</td>
+  
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@NÂ¤±ÆÊ¢Éô.T@@" value="@@Â¤±ÆÊ¢Éô.T@@"></td>
+ </tr>
+
+ <tr>
+  <td class="darker">Ã±½ãÂ¤±Æ¹Ã¾õÁ£</td>
+  <td class="darker"></td>
+  <td class="darker"><input type="checkbox" name="@@NÃ±½ãÂ¤±Æ¹Ã¾õÁ£.1@@" @@Ã±½ãÂ¤±Æ¹Ã¾õÁ£.1@@
+  >-<input type="checkbox" name="@@NÃ±½ãÂ¤±Æ¹Ã¾õÁ£.2@@" @@Ã±½ãÂ¤±Æ¹Ã¾õÁ£.2@@
+>+<input type="checkbox" name="@@NÃ±½ãÂ¤±Æ¹Ã¾õÁ£.3@@" @@Ã±½ãÂ¤±Æ¹Ã¾õÁ£.3@@
+   >¡Þ</td>
+  <td class="darker"><input type="text" class="dirtext"
+      name="@@NÃ±½ãÂ¤±Æ¹Ã¾õÁ£.T@@" value="@@Ã±½ãÂ¤±Æ¹Ã¾õÁ£.T@@"></td>
+ 
+ <td class="darker">Â¤±ÆÂ¤±Æ¹Ã¾õÁ£</td>
+  <td class="darker"></td>
+  <td class="darker"><input type="checkbox" name="@@NÂ¤±ÆÂ¤±Æ¹Ã¾õÁ£.1@@" @@Â¤±ÆÂ¤±Æ¹Ã¾õÁ£.1@@
+  >-<input type="checkbox" name="@@NÂ¤±ÆÂ¤±Æ¹Ã¾õÁ£.2@@" @@Â¤±ÆÂ¤±Æ¹Ã¾õÁ£.2@@
+>+<input type="checkbox" name="@@NÂ¤±ÆÂ¤±Æ¹Ã¾õÁ£.3@@" @@Â¤±ÆÂ¤±Æ¹Ã¾õÁ£.3@@
+   >¡Þ</td>
+  
+  <td class="darker"><input type="text" class="dirtext"
+      name="@@NÂ¤±ÆÂ¤±Æ¹Ã¾õÁ£.T@@" value="@@Â¤±ÆÂ¤±Æ¹Ã¾õÁ£.T@@"></td>
+ </tr>
+
+ <tr>
+  <td class="plain">Ã±½ã¼ê´ØÀá</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@NÃ±½ã¼ê´ØÀá.1@@" @@Ã±½ã¼ê´ØÀá.1@@
+  >-<input type="checkbox" name="@@NÃ±½ã¼ê´ØÀá.2@@" @@Ã±½ã¼ê´ØÀá.2@@
+>+<input type="checkbox" name="@@NÃ±½ã¼ê´ØÀá.3@@" @@Ã±½ã¼ê´ØÀá.3@@ 
+   >¡Þ</td>
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@NÃ±½ã¼ê´ØÀá.T@@" value="@@Ã±½ã¼ê´ØÀá.T@@"></td>
+  <td class="plain">Â¤±Æ¼ê´ØÀá</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@NÂ¤±Æ¼ê´ØÀá.1@@" @@Â¤±Æ¼ê´ØÀá.1@@
+  >-<input type="checkbox" name="@@NÂ¤±Æ¼ê´ØÀá.2@@" @@Â¤±Æ¼ê´ØÀá.2@@
+>+<input type="checkbox" name="@@NÂ¤±Æ¼ê´ØÀá.3@@" @@Â¤±Æ¼ê´ØÀá.3@@
+   >¡Þ</td>
+  
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@NÂ¤±Æ¼ê´ØÀá.T@@" value="@@Â¤±Æ¼ê´ØÀá.T@@"></td>
+ </tr>
+
+ <tr>
+  <td class="darker">Ã±½ã¹Ã¾õÁ£</td>
+  <td class="darker"></td>
+  <td class="darker"><input type="checkbox" name="@@NÃ±½ã¹Ã¾õÁ£.1@@" @@Ã±½ã¹Ã¾õÁ£.1@@
+>-<input type="checkbox" name="@@NÃ±½ã¹Ã¾õÁ£.2@@" @@Ã±½ã¹Ã¾õÁ£.2@@
+>+<input type="checkbox" name="@@NÃ±½ã¹Ã¾õÁ£.3@@" @@Ã±½ã¹Ã¾õÁ£.3@@
+   >¡Þ</td>
+  <td class="darker"><input type="text" class="dirtext"
+      name="@@NÃ±½ã¹Ã¾õÁ£.T@@" value="@@Ã±½ã¹Ã¾õÁ£.T@@"></td>
+
+  <td class="darker">Â¤±Æ¹Ã¾õÁ£</td>
+  <td class="darker"></td>
+  <td class="darker"><input type="checkbox" name="@@NÂ¤±Æ¹Ã¾õÁ£.1@@" @@Â¤±Æ¹Ã¾õÁ£1@@
+  
+  >-<input type="checkbox" name="@@NÂ¤±Æ¹Ã¾õÁ£.2@@" @@Â¤±Æ¹Ã¾õÁ£2@@
+>+<input type="checkbox" name="@@NÂ¤±Æ¹Ã¾õÁ£.3@@" @@Â¤±Æ¹Ã¾õÁ£3@@
+   >¡Þ</td>
+  <td class="darker"><input type="text" class="dirtext"
+      name="@@NÂ¤±Æ¹Ã¾õÁ£.T@@" value="@@Â¤±Æ¹Ã¾õÁ£.T@@"></td>
+ </tr>
+
+
+ 
+ <tr>
+  <th class="heading" colspan="8">¤½¤ÎÂ¾¸¡ºº¾ðÊó</th>
+
+  
+</tr>
+<tr>
+  <td class="darker"> </td>
+  <td class="darker"> </td>
+  
+ </tr>
+ <tr>
+  <td class="plain" colspan="8" rowspan="5"
+  ><textarea class="plain miscinfo" cols="60" rows="8"
+    name="@@N¤½¤ÎÂ¾@@">@@¤½¤ÎÂ¾@@</textarea
+  ></td>
+  
+
+</tbody>
+</table>

@@ -1,0 +1,21 @@
+table.masterselect {
+    border: 1px solid #aaa;
+}
+table.masterselect td.acceptance {
+    text-align: center;
+}
+table.masterselect th.key_column_head,
+table.masterselect td.key_column_data {
+    background-color: #fef;
+}
+table.masterselect th,
+table.masterselect td {
+    background-color: #ffe;
+    white-space: wrap;
+}
+table.controlset input.masterselect_control {
+    width: 120px;
+}
+table.controlset tr {
+    height: 24px;
+}

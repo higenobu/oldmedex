@@ -1,0 +1,171 @@
+<?php // -*- mode: php; coding: euc-japan -*-
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/template-compile.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/manage/simple-object.php';
+
+$_lib_u_manage_template_cfg = array
+(
+	'TABLE' => 'mx_template',
+	'COLS' => array('application',
+			'category',
+			'name',
+			'template_src',
+			'template_obj',
+			'disabled'),
+
+	'ALLOW_SORT' => 1,
+	'DEFAULT_SORT' => 'category',
+
+	'LCOLS' => array(array('Column' => 'category',
+			       'Label' => '分類'),
+			 array('Column' => 'name',
+			       'Label' => '名前'),
+			 array('Column' => 'disabled',
+			       'Label' => '使用',
+			       'Draw' => 'enum',
+			       'Enum' => array('' => 'する',
+					       'Y' => 'しない',
+					       'N' => 'する')),
+			 ),
+
+	'DCOLS' => array(array('Column' => 'category',
+			       'Label' => '分類'),
+			 array('Column' => 'name',
+			       'Label' => '名前'),
+			 array('Column' => 'disabled',
+			       'Label' => '使用',
+			       'Draw' => 'enum',
+			       'Enum' => array('' => 'する',
+					       'Y' => 'しない',
+					       'N' => 'する')),
+			 array('Column' => NULL,
+			       'Label' => 'プレビュー',
+			       'Draw' => 'group_head'),
+			 array('Column' => 'template_obj',
+			       'Label' => NULL,
+			       'Draw' => 'template'),
+			 ),
+
+	'ECOLS' => array(array('Column' => 'category',
+			       'Label' => '分類',
+			       'Option' => array('size' => 30)),
+			 array('Column' => 'name',
+			       'Label' => '名前',
+			       'Option' => array('size' => 30)),
+			 array('Column' => 'disabled',
+			       'Label' => '使用',
+			       'Draw' => 'enum',
+			       'Enum' => array('' => 'する',
+					       'Y' => 'しない',
+					       'N' => 'する')),
+			 ),
+);
+
+if ($_mx_karte_layout == 'soap001') {
+    $_lib_u_manage_template_appl = array(
+	    'u/doctor/karteview.php' =>
+	    array('SPEC' => array('S0' => '主訴',
+				  'S1' => '現症病歴',
+				  'S2' => '既往病歴',
+				  'S3' => '家族病歴',
+				  'S4' => 'その他病歴',
+				  'O0' => '所見',
+				  'A' => '診断',
+				  'P' => '方針',
+				  'T' => '自由形式',
+				  ),
+		  ),
+    );
+} else {
+//1115-2013 for LCM   
+ $_lib_u_manage_template_appl = array(
+	    'u/doctor/karteview.php' =>
+	    array('SPEC' => array('S0' => 'S0',
+				  'S1' => 'S1',
+				  'S2' => 'S2',
+				  'S3' => 'S3',
+				  'S4' => 'S4',
+				  'O0' => 'o0',
+				  'O1' => 'o1',
+				  'O2' => 'o2',
+				  'O3' => 'o3',
+				  'O4' => 'o4',
+				  'O5' => '05',
+				  'O6' => 'o6',
+				  'A' => 'A',
+				  'P' => 'P',
+				  'T' => 'T',
+				  ),
+		  ),
+    );
+}
+
+function _lib_u_manage_template_cfg($application)
+{
+	global $_lib_u_manage_template_cfg;
+	global $_lib_u_manage_template_appl;
+
+	$cfg = $_lib_u_manage_template_cfg;
+	$cfg['APPLICATION'] = mx_get_application_id($application);
+	$cfg['APPLICATION_PATH'] = $application;
+	$ad = $_lib_u_manage_template_appl[$application];
+	$cfg['APPLICATION_DATA'] = $ad;
+
+	$ecols = $cfg['ECOLS'];
+	$ecols[] = array('Column' => NULL,
+			 'Label' => '入力欄',
+			 'Draw' => 'group_head');
+	foreach ($ad['SPEC'] as $colname => $label) {
+		$cn = "TTXT_$colname";
+		$ecols[] = array('Column' => $cn,
+				 'Label' => "$label ($colname)",
+				 'Draw' => 'textarea',
+				 'Option' => array('AbbrevField' => -1,
+						   'rows' => 12),
+				 );
+	}
+	$ecols[] = array('Column' => NULL,
+			 'Label' => 'プレビュー',
+			 'Draw' => 'group_head');
+	$ecols[] = array('Column' => NULL,
+			 'Label' => NULL,
+			 'Draw' => 'preview_template');
+	$ecols[] = array('Column' => 'update_preview',
+			 'Label' => NULL,
+			 'Draw' => 'update_preview');
+	$cfg['ECOLS'] = $ecols;
+
+	return $cfg;
+}
+
+class list_of_templates extends list_of_simple_objects {
+	function list_of_templates($prefix, $application) {
+		$cfg = _lib_u_manage_template_cfg($application);
+		list_of_simple_objects::list_of_simple_objects($prefix, $cfg);
+	}
+	function base_fetch_stmt_0() {
+		$a = $this->so_config['APPLICATION'];
+		return $this->so_config['STMT'] . " AND application = $a";
+	}
+}
+
+class template_display extends simple_object_display {
+	function template_display($prefix, $application) {
+		$cfg = _lib_u_manage_template_cfg($application);
+		simple_object_display::simple_object_display($prefix, $cfg);
+	}
+
+	function dx_template($desc, $value, $changed) {
+		$up = $this->containing_application;
+		if ($up && $up->soe && $up->soe->chosen())
+			return;
+//print "BBBB:".$value."\n";
+		$template_obj = mx_form_decode_name($value);
+//print "ABC".$template_obj."\n";
+		$template_obj = unserialize($template_obj);
+//print_r($template_obj);
+//print "ZZZ"."\n";
+
+		$template_obj = $template_obj[0];
+$template_obj="今日から|||
+昨日から|||
+２

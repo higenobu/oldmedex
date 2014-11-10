@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja"><head><!-- -*- coding: euc-jp -*- --><style>
+		<!-- 
+		BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-size:small ;}
+		 -->
+</style></head>
+<body><table border="1" cellspacing="0" frame="void" rules="none">
+  <tbody>
+    <tr>
+      <td colspan="4" align="center" valign="middle"><font size="+2">医療保護入院者（第33条第2項）の入院届</font></td>
+    </tr>
+    <tr>
+      <td width="200"></td>
+      <td width="150"></td>
+      <td align="right" width="150"></td>
+      <td width="150"></td>
+    </tr>
+    <tr>
+      <td style="border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3" align="right">記載者：</td>
+      <td style="border-bottom: 1pt solid rgb(0, 0, 0);">@@ユーザ.氏名@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" align="right">作成日：</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3">@@医療保護-X-入院届作成日:draw=date@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" rowspan="2" align="left">入院者</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">氏名：<br>
+      @@患者台帳.氏名@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">性別：<br>
+      @@患者台帳.性別@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">生年月日：<br>
+      @@患者台帳.生年月日@@生</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3" bgcolor="#00ffff">住所：<br>
+      〒@@患者台帳.住所0@@ @@患者台帳.住所1@@@@患者台帳.住所2@@@@患者台帳.住所3@@@@患者台帳.住所4@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">第33条第2項の入院年月日</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">@@医療保護-X-第33条第2項入院年月日:draw=date@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">今回の入院年月日：<br>
+      @@医療保護-X-今回入院年月日:draw=date@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">入院形態：<br>
+      @@医療保護-X-第33条第2項入院形態@@
+      </td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">第34条による移送の有無</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3">@@医療保護-X-第34条移送有無:draw=radio@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" rowspan="3">病名</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">１　主たる精神障害</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">２　従たる精神障害</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">３　身体合併症</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">@@紹介元-X-主病名ICD10病名:draw=textarea:option=40,1@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">@@紹介元-X-従病名ICD10病名:draw=textarea:option=40,1@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" rowspan="2">@@患情問診-X-合併症:draw=textarea:option=40,1@@</td>
+</tr>
+<tr>
+<td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">ICD10:@@紹介元-X-主病名ICD10:draw=icd10:option=紹介元-X-主病名ICD10病名@@</td>
+<td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">ICD10:@@紹介元-X-従病名ICD10:draw=icd10:option=紹介元-X-従病名ICD10病名@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">医療保護入院の必要性</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3">@@医療保護-X-必要性第３３:draw=textarea:option=100,10@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">病状又は状態像の概要</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3">@@医療保護-X-病状又は状態像:draw=textarea:option=98,2@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" rowspan="2">同意者</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">氏名：<br>
+      @@保護者1-X-氏名@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">性別:    続柄：<br>
+      @@保護者1-X-性別@@  @@保護者1-X-続柄@@</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" bgcolor="#00ffff">生年月日：<br>
+      @@保護者1-X-生年月日@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3" bgcolor="#00ffff">住所：@@保護者1-X-住所:draw=textarea:option=80,1@@</td>
+    </tr>
+    <tr>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);">家庭裁判所への申請日<br>
+      (予定日を含む)</td>
+      <td style="border-left: 1pt solid rgb(0, 0, 0); border-right: 1pt solid rgb(0, 0, 0); border-bottom: 1pt solid rgb(0, 0, 0);" colspan="3">@@医療保護-X-裁判所申請日:draw=date@@</td>
+    </tr>
+  </tbody>
+</table>
+</body></html>

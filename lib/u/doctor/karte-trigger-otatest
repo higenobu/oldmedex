@@ -1,0 +1,96 @@
+DROP FUNCTION process_karte()  cascade;
+
+CREATE OR REPLACE FUNCTION process_karte()
+  RETURNS trigger AS
+$BODY$
+    BEGIN
+        --
+        -- Create a row in emp_audit to reflect the operation performed on emp,
+        -- make use of the special variable TG_OP to work out the operation.
+        --
+        IF (TG_OP = 'INSERT') THEN
+            INSERT INTO karte (patient, orderdate, s0,s1)SELECT NEW."患者",NEW."日付", NEW."S0", NEW."S1" ;
+            RETURN NEW;
+        END IF;
+        RETURN NULL; -- result is ignored since this is an AFTER trigger
+    END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ 
+
+
+******************************
+CREATE TRIGGER process_karte
+  AFTER INSERT OR UPDATE OR DELETE
+  ON "カルテデモ表"
+  FOR EACH ROW
+  EXECUTE PROCEDURE process_karte();
+***************************************
+CREATE OR REPLACE FUNCTION ota()
+  RETURNS trigger AS
+$BODY$
+<<update_vital>>
+    DECLARE
+
+        d_pt        bigint;
+	d_predate   date;
+        d_date      date;
+        d_plandate date;
+       
+        
+         d_sup date;
+       
+       ota_sum   "カルテデモ表"%ROWTYPE;
+
+       
+    BEGIN 
+
+
+
+        IF (TG_OP = 'INSERT' OR TG_OP='UPDATE') THEN 
+
+            d_pt := NEW."患者";
+            d_date := NEW."日付";
+             
+              
+		d_sup := NEW."Superseded";
+
+
+        	IF d_date  is  not null  and d_sup is null THEN
+
+
+ 
+	update otatest_order
+	set cc401=NEW."S0",
+	cc402=NEW."S1",
+	cc403=NEW."S2",
+	cc409=NEW."S3",
+	cc410=NEW."S4"
+	where    patient=d_pt and   order_date=d_date;   
+  
+
+        RETURN null;
+   
+	EXIT update_vital;
+        END IF;
+         
+         
+   	
+         
+
+        	
+
+		
+   END IF;   
+         
+   
+  	RETURN null;
+     
+      END 
+
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ 
+

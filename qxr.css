@@ -1,0 +1,39 @@
+table.quickxray * {
+    font-size: 9pt;
+    font-family: sans, sans-serif, gothic;
+}
+
+table.quickxray * .plain {
+    background-color: #ffffff;
+    white-space: nowrap;
+}
+
+table.quickxray * .align-right {
+    text-align: right;
+}
+
+table.quickxray * .heading {
+    background-color: #aaaaaa;
+}
+
+table.quickxray * .darker {
+    background-color: #cccccc;
+}
+
+table.quickxray * td {
+    border: 1px solid #aaaaaa;
+}
+
+table.quickxray * input.dirtext {
+    background-color: transparent;
+    width: 100px;
+    border-style: none;
+}
+
+table.quickxray * textarea.miscinfo {
+    border-style: none;
+}
+
+table.quickxray {
+    border-collapse: collapse;
+}

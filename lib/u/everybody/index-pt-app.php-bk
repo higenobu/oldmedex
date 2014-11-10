@@ -1,0 +1,229 @@
+<?php // -*- mode: php; coding: euc-japan -*-
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/ppa.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/everybody/index-pt.php';
+
+class everybody_index_pt_application extends per_patient_application {
+	var $use_single_pane = 1;
+	var $_browse_only = 1;
+
+	var $use_list_of_checkin = 0;
+	var $use_patient_history = 0;
+
+	function everybody_index_pt_application() {
+		global $_mx_use_checkin_list;
+		$this->use_list_of_checkin = $_mx_use_checkin_list;
+		if ($this->use_list_of_checkin)
+			$this->auto_use_lop = 'ppa_checkin_self_list';
+		else
+			$this->auto_use_lop = 'ppa_patient_list';
+		per_patient_application::per_patient_application();
+
+		$this->date_to = mx_check_request('IndexPtToDate', NULL);
+		$this->date_span = mx_check_request('IndexPtSpan', NULL);
+		if (is_null($this->date_to) ||
+		    mx_check_request('SetPatient')) {
+			$this->date_to = mx_today_string();
+			$this->date_span = 86400*90;
+		} else if (array_key_exists('IndexPtToPrev', $_REQUEST)) {
+			$this->date_to = $this->date_adjust($this->date_to,
+							    -$this->date_span);
+		} else if (array_key_exists('IndexPtToNext', $_REQUEST)) {
+			$this->date_to = $this->date_adjust($this->date_to,
+							    $this->date_span);
+		}
+		$this->date_from = $this->date_adjust($this->date_to,
+						      -$this->date_span);
+	}
+
+	function appbar_filter($path, $name, $pid) {
+		if (trim($pid) == '') {
+			/*
+			 * Do not show applications that set encounter to
+			 * "finished" and such when seeing no patient.
+			 */
+			if (is_encounter_state_application($path))
+				return 0;
+		} else {
+			/*
+			 * Do not show applications that switch encounter
+			 * mode between Inpatient and Outpatient when
+			 * already seeing a patient.
+			 */
+			if ($path == 'u/everybody/encounter-mode-flip.php')
+				return 0;
+		}
+		return 1;
+	}
+
+	function date_adjust($date, $shift) {
+		$time = mx_datetime_to_unixtime($date . " 00:00:00") + $shift;
+		$today = localtime($time, 1);
+		return sprintf("%04d-%02d-%02d",
+			       $today['tm_year'] + 1900,
+			       $today['tm_mon'] + 1,
+			       $today['tm_mday']);
+	}
+
+	function left_pane_1() {
+//1125-2012 open and close  tab
+$ptid1=$this->patient_ID;
+$openwin1=' ';
+$openwin2=' ';
+$openwin3=' ';
+$openwin4=' ';
+$openwin5=' ';
+$closewin1=' ';
+$closewin2=' ';
+$closewin3=' ';
+$closewin4=' ';
+$closewin5=' ';
+
+
+$opensw1=1; 
+$opensw2=1;
+$opensw3=1;
+$opensw4=0;
+$opensw5=1; 
+//0909-2013  no open window
+/*
+if ($opensw1==1) {
+$openwin1= 'mywindow1=window.open("../doctor/karteview.php?SetPatient=1&PatientID='."$ptid1".'"'.' );';
+$closewin1='mywindow1.close();';
+
+}
+
+ 
+if ($opensw2==1) {
+$openwin2= 'mywindow2=window.open("../doctor/patient-disease.php?SetPatient=1&PatientID='."$ptid1".'"'.' );';
+$closewin2='mywindow2.close();';
+}
+ 
+if ($opensw3==1) {
+$openwin3= 'mywindow3=window.open("../pharmacy/rx_order3.php?SetPatient=1&PatientID='."$ptid1".'"'.' );';
+$closewin3='mywindow3.close();';
+}
+ 
+if ($opensw4==1) {
+$openwin4= ' mywindow4=window.open("../test/order2.php?SetPatient=1&PatientID='."$ptid1".'"'.' );';
+$closewin4='mywindow4.close();';
+}
+
+if ($opensw5==1) {
+$openwin5= ' mywindow5=window.open("../test/print_historical.php?SetPatient=1&PatientID='."$ptid1".'"'.' );';
+$closewin5='mywindow5.close();';
+}
+*/
+
+print '
+<script type="text/javascript">
+    function winOpen(){'.
+       	$openwin1.
+        $openwin2.
+	$openwin3.
+	$openwin4.
+	$openwin5.
+'}
+   function closeWin() {'.
+	 
+	$closewin1.
+	$closewin2.
+	$closewin3.
+	$closewin4.
+	$closewin5.
+   '}';
+print '</script>';
+/*
+print '<a   href="index-pt.php">main　</a>';
+
+print '<a href="../../logout.php">logout　</a>';
+print '<a href="javascript:void(0)" onclick="winOpen();">open tab　</a>';
+ 
+print '<a href="javascript:closeWin();">close tab　</a>
+
+
+<br />';
+*/
+
+ /* 01-01-2014
+//1221-2012
+		print "period ";
+		mx_formi_date('IndexPtToDate', $this->date_to);
+		print 'until';
+		mx_formi_select('IndexPtSpan', $this->date_span,
+				array(86400*30 => '30 days',
+				      86400*60 => '60 days',
+				      86400*90 => '90 days',
+				      86400*180 => '180 days',
+				      86400*360 => '360 days',
+				      86400*720 => '720 days',
+				      ),
+				array('immediate-submit' => 1));
+//1221-2012
+		print ' ';
+		print '<button>update</button>';
+		print '<button name="IndexPtToPrev">forward</button>';
+		if ($this->date_from < mx_today_string())
+			print '<button name="IndexPtToNext">back</button>';
+		print '<br>';
+
+		index_pt_left_pane_1($this->patient_ObjectID,
+				     $this->patient_ID,
+				     $this->date_from, $this->date_to);
+*/
+//01-01-2014
+
+	}
+
+}
+
+class everybody_encounter_mode_flip_application extends everybody_index_pt_application {
+
+	function everybody_encounter_mode_flip_application() {
+		everybody_index_pt_application::everybody_index_pt_application();
+		if (is_null($this->u))
+			return;
+		$e = $this->encounter_mode;
+
+ 
+		if (is_null($e) || $e != 'O')
+			$ee = 'O';
+		else
+			$ee = 'I';
+ 
+
+
+		mx_set_encounter_mode($this->u, $ee);
+	}
+
+	function main() {
+		mx_redirect_to_user_top($this->u);
+	}
+}
+
+class everybody_finish_encounter_application extends everybody_index_pt_application {
+
+	function main() {
+		if (array_key_exists('SetPatient', $_REQUEST) &&
+		    array_key_exists('PatientID', $_REQUEST) &&
+		    $this->encounter_mode == 'O') {
+			mx_finish_encounter_drop_checkin
+				($this->u, $_REQUEST['PatientID']);
+		}
+		mx_redirect_to_user_top($this->u);
+	}
+}
+
+class everybody_interrupt_encounter_application extends everybody_index_pt_application {
+
+	function main() {
+		if (array_key_exists('SetPatient', $_REQUEST) &&
+		    array_key_exists('PatientID', $_REQUEST) &&
+		    $this->encounter_mode == 'O') {
+			mx_note_checkin_list_use($this->u, '', '');
+		}
+		mx_redirect_to_user_top($this->u);
+	}
+
+}
+
+?>

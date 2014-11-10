@@ -1,0 +1,82 @@
+$inf=$params['c560'];
+$params['c560']=selectjp($inf);
+ 
+
+$inf=$params['c561'];
+$params['c561']=selectjp($inf);
+$inf=$params['cc0'];
+ 
+$params['cc0']=selectjp($inf);
+//
+ 
+$inf=$params['notes'];
+ 
+$params['notes']=selectjp($inf);
+//
+//
+ 
+$inf=$params['ss0'];
+ 
+$params['ss0']=selectjp($inf);
+//
+ 
+$inf=$params['ss1'];
+ 
+$params['ss1']=selectjp($inf);
+//
+$inf=$params['ss7'];
+ 
+$params['ss7']=selectjp($inf);
+//
+$inf=$params['special_req'];
+ 
+$params['special_req']=selectjp($inf);
+//
+$inf=$params['c1002'];
+ 
+$params['c1002']=selectjp($inf);
+//
+
+$kk=0;
+ for ($kk=0;$kk<10;$kk++)
+{
+ 
+ 
+$index="c50".$kk;
+$inf=$params[$index];
+$params[$index]=selectjp($inf);
+
+ }
+ //0224-2014
+$kk=0;
+ for ($kk=0;$kk<6;$kk++)
+{
+ 
+ 
+$index="c51".$kk;
+$inf=$params[$index];
+$params[$index]=selectjp($inf);
+
+ }
+ 
+ 
+ // 
+$kk=0;
+ for ($kk=0;$kk<10;$kk++)
+{
+ 
+ 
+$index="cc40".$kk;
+$inf=$params[$index];
+$params[$index]=selectjp($inf);
+
+ }
+$kk=0;
+ for ($kk=0;$kk<10;$kk++)
+{
+ 
+ 
+$index="cc41".$kk;
+$inf=$params[$index];
+$params[$index]=selectjp($inf);
+

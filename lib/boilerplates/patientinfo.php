@@ -1,0 +1,235 @@
+<?php // -*- mode: php; coding: euc-japan -*-
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/common.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/ui_config.php';
+
+////////////////////////////////////////////////////////////////
+// Fetch doctors in charge of the patient
+function mx_find_dr_for_patient($patientID, $must_be_modality=1) {
+
+	$db = mx_db_connect();
+	$patientID = mx_db_sql_quote($patientID);
+
+	$stmt = <<<SQL
+		SELECT E."ObjectID", (E."姓" || E."名") AS "姓名"
+		FROM "患者担当職員" AS T
+		JOIN "患者担当職員データ" AS D
+		ON T."ObjectID" = D."患者担当職員" AND T."Superseded" IS NULL
+		JOIN "職員台帳" AS E
+		ON E."ObjectID" = D."職員"
+		JOIN "患者台帳" AS P
+		ON P."ObjectID" = T."患者"
+SQL;
+	if ($must_be_modality) {
+		$stmt .= <<<SQL
+			JOIN modalities_to_medex_employee M
+			ON M.employee = E."ObjectID"
+SQL;
+	}
+	$stmt .= <<<SQL
+		WHERE P."ObjectID" = $patientID
+SQL;
+
+	print "<!-- $stmt\n\n";
+	$r = pg_fetch_all(pg_query($db, $stmt));
+	var_dump($r);
+	print "-->\n";
+	return $r;
+}
+
+////////////////////////////////////////////////////////////////
+// Fetch data for patient information
+function mx_find_patient_by_patient_id($patientID) {
+  $stmt = ('SELECT "ObjectID" FROM "患者台帳" WHERE "Superseded" IS NULL
+	    AND "患者ID" = ' . mx_db_sql_quote($patientID));
+  $d = mx_db_fetch_single(mx_db_connect(), $stmt);
+  if (! is_null($d)) {
+    return $d['ObjectID'];
+  }
+  return NULL;
+}
+
+////////////////////////////////////////////////////////////////
+// Boilerplate patient information
+
+function mx_draw_patientinfo_get_data($ObjectID, $options=NULL)
+{
+  $q = mx_db_sql_quote($ObjectID);
+
+  $db = mx_db_connect();
+  $stmt = ('SELECT "患者ID","フリガナ","患者マーク",
+	    ("姓" || \' \' || "名") as "氏名",
+	    (CASE WHEN "性別" = \'M\' THEN \'男\'
+	     WHEN "性別" = \'F\' THEN \'女\'
+	     ELSE \'不明\' END) as "性別",
+	    COALESCE(to_char("生年月日", \'YYYY-MM-DD\'), \'不明\')
+ 		as "生年月日",
+	    COALESCE(to_char("発症日", \'YYYY-MM-DD\'), \'-\')
+ 		as "発症日",
+	    COALESCE(to_char("入院日", \'YYYY-MM-DD\'), \'-\')
+ 		as "入院日",
+	    COALESCE(to_char("退院予定日", \'YYYY-MM-DD\'), \'-\')
+ 		as "退院予定日",
+	    "退院予定・見込",
+	    (CASE WHEN "利き手" = \'R\' THEN \'右\'
+	     WHEN "利き手" = \'L\' THEN \'左\'
+	     WHEN "利き手" = \'r\' THEN \'右(矯正)\'
+	     ELSE \'不明\' END) as "利き手",
+	    (CASE WHEN "入外区分" = \'I\' THEN \'入院\'
+	     WHEN "入外区分" = \'O\' THEN \'外来\'
+	     WHEN "入外区分" = \'E\' THEN \'判定対象\'
+	     WHEN "入外区分" = \'W\' THEN \'入院待ち\'
+	     ELSE \'不明\' END) as "入外区分",
+            "希望病棟","アレルギー","感染症","備考",
+            "加入電話", "携帯電話", "住所0", "住所1", "住所2", "住所3", "住所4"
+	    FROM "患者台帳"
+	    WHERE "Superseded" IS NULL AND "ObjectID" = ' . $q);
+
+  $a = pg_fetch_array(pg_query($db, $stmt));
+
+  if (mx_check_option('ShowRoomPref', $options)) {
+	  $stmt = <<<SQL
+		SELECT RPD."患者", R."病室名"
+		FROM "病室患者表" AS RP
+		JOIN "病室患者データ" AS RPD
+		ON RP."ObjectID" = RPD."病室患者表"
+		JOIN "病室一覧表" AS R
+		ON R."ObjectID" = RP."病室"
+		WHERE
+		RP."Superseded" IS NULL AND
+		RPD."患者" = $q
+		ORDER BY RP."日付" DESC, RPD."患者"
+SQL;
+	  $r = pg_fetch_array(pg_query($db, $stmt));
+	  if ($r && is_array($r))
+		  $a['病室名'] = sprintf("(%s)", $r['病室名']);
+	  else
+		  $a['病室名'] = '';
+  }
+
+  if (1) {
+    $stmt = <<<SQL
+      SELECT orca_insurance_uid, "保険種別", "保険者番号", 
+       "被保険者", "被保険者手帳の記号", "被保険者手帳の番号",
+       "負担割合"
+FROM insurance
+      WHERE patient = $q
+SQL;
+    $a['insurances'] = mx_db_fetch_all($db, $stmt);
+  }
+  return $a;
+}
+
+function mx_draw_patientinfo_custom($ObjectID, $show)
+{
+  $d = mx_draw_patientinfo_get_data($ObjectID);
+  $show_cnt = count($show[0]);
+  print "<table class=\"tabular-data\">";
+  foreach ($show as $a) {
+    print "<tr>";
+    for ($i = 0; $i < $show_cnt; $i++) {
+	    print "<th>" . htmlspecialchars($a[$i]) . "</th><td>";
+	    if (array_key_exists($a[$i], $d)) {
+		    print htmlspecialchars($d[$a[$i]]);
+	    }
+	    else {
+		    print "&nbsp;";
+	    }
+	    print "</td>";
+    }
+    print "</tr>\n";
+  }
+  print "</table>\n";
+  return $d;
+}
+
+////////////////////////////////////////////////////////////////
+// Boilerplate patient information
+
+function mx_draw_patientinfo_brief($ObjectID)
+{
+  global $__uiconfig_patientinfo_brief_show, $_mx_bmd_layout;
+  if ($_mx_bmd_layout) {
+	  global $_mx_show_room_patient_info;
+	  $option = array();
+	  if ($_mx_show_room_patient_info)
+		  $option['ShowRoomPref'] = 1;
+	  return mx_draw_patientinfo_bmd($ObjectID, &$option);
+  }
+  return mx_draw_patientinfo_custom($ObjectID,
+				    $__uiconfig_patientinfo_brief_show);
+}
+
+function mx_draw_patientinfo_bmd($ObjectID, $options=NULL)
+{
+  $d = mx_draw_patientinfo_get_data($ObjectID, $options);
+
+  $mark = $d['患者マーク'];
+
+  print "<table class=\"tabular-data\">";
+
+  print "<tr><th>患者ID</th><td>";
+  print htmlspecialchars($d['患者ID']);
+  print "</td><th>生年月日</th><td>";
+  $x = $d['生年月日'];
+  if(mx_check_option('Culture', $options) == 'Japanese')
+    $x = mx_wareki($x);
+  $x .=' (' . mx_calc_age($d['生年月日']) . '才)';
+  print htmlspecialchars($x);
+  print "</td><th rowspan=\"1\" style=\"vertical-align: middle\">氏名</th>";
+  print "<td rowspan=\"1\" style=\"vertical-align: middle; ";
+  print "font-size: 150%; font-weight: bold; \">";
+  print htmlspecialchars($d['氏名']);
+  print "</td>\n";
+//
+print "<th>性別</th><td>";
+  print htmlspecialchars($d['性別']);
+  print "</td><th>入院日</th><td>";
+  if (mx_check_option('ShowWardPref', $options))
+    print htmlspecialchars($d['希望病棟']) . ' ';
+  if (mx_check_option('ShowRoomPref', $options))
+    print htmlspecialchars($d['病室名']) . ' ';
+  print htmlspecialchars($d['入院日']);
+  print "</tr>\n";
+
+//"アレルギー"
+print "<tr><th>備考</th><td>";
+  print htmlspecialchars($d['備考']);
+  print "</td><th>感染症</th><td>";
+  print htmlspecialchars($d['感染症']);
+print "</td><th>アレルギー</th><td>";
+  print htmlspecialchars($d['アレルギー']);
+ print "</td>\n";
+//
+  if ($mark) {
+	  print "<td rowspan=\"2\" style=\"vertical-align: middle; ";
+	  print "font-size: 150%; font-weight: bold; \">";
+	  print "${mark}</td>";
+  }
+
+  if (is_array($d['insurances']) && count($d['insurances']) > 0) {
+    print "<td><select name=\"orca_insurance_uid\">";
+    foreach($d['insurances'] as $ins) {
+      printf("<option value=\"%s\">%s %s %s割</option>",
+	     $ins['orca_insurance_uid'],
+	     $ins["保険種別"],
+	     $ins["被保険者"] == '2' ? '家族' : '本人',
+	     is_null($ins['負担割合']) ? "--" : $ins['負担割合']);
+    }
+    print "</select></td>";
+  }
+  print "</tr>";   
+/*
+  print "<tr><th>性別</th><td>";
+  print htmlspecialchars($d['性別']);
+  print "</td><th>入院日</th><td>";
+  if (mx_check_option('ShowWardPref', $options))
+    print htmlspecialchars($d['希望病棟']) . ' ';
+  if (mx_check_option('ShowRoomPref', $options))
+    print htmlspecialchars($d['病室名']) . ' ';
+  print htmlspecialchars($d['入院日']);
+  print "</tr>\n";
+*/
+
+  print "</table>\n";
+}
+?>

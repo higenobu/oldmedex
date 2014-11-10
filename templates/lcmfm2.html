@@ -1,0 +1,712 @@
+<script type="text/javascript">
+<!--
+
+
+function submitStop(e){
+    if (!e) var e = window.event;
+ 
+    if(e.keyCode == 13)
+        return false;
+}
+
+
+// -->
+</script>
+<table class="quickxray">
+<thead>
+  <colgroup>
+   <col width="100px">
+   <col width="40px">
+   <col width="40px">
+   <col width="40px">
+
+   <col width="100px">
+   <col width="40px">
+   <col width="40px">
+   <col width="40px">
+   <col width="100px">
+  </colgroup>  
+</thead>
+<tbody>
+<tr><th>DR</th><td class="plain" colspan="1"><select name="@@Nshiji@@" id="@@shiji@@" onKeyPress="return disableEnterKey(this,event)">
+
+<option value="soreiyu">soreiyu</option>
+
+
+</select>
+
+
+  
+ <td class="plain">DOS</td>
+ <td colspan="1"><div style="white-space: nowrap"><script>var calend = new MedexCalendarPopup("div-soe-a5aaa1bca5c0bdaacebbc6fc");</script>
+<div id="div-soe-a5aaa1bca5c0bdaacebbc6fc" class="soecal" style="position:absolute; visibility:hidden"></div>
+<input type="text" onKeyPress="return disableEnterKey(this,event)" id="soe-a5aaa1bca5c0bdaacebbc6fc" name="@@Ndos@@" value="@@dos@@">
+<a href="#" onclick="calend.select(document.getElementById('soe-a5aaa1bca5c0bdaacebbc6fc'),'anchor-soe-a5aaa1bca5c0bdaacebbc6fc', 'yyyy-MM-dd'); return false;" id="anchor-soe-a5aaa1bca5c0bdaacebbc6fc" name="anchor-soe-a5aaa1bca5c0bdaacebbc6fc" >*</a></div></td></tr>
+
+ <tr>
+  <th class="darker">Package</th>
+ 
+  <td class="plain" colspan="4"><input type="text" name="@@Nmokuteki@@"
+  value="@@mokuteki@@" onKeyPress="return submitStop(event);"></td>
+<td class="plain">Stop</td>
+  
+  <td class="plain" colspan="1"><input type="text" name="@@Nstop@@"
+  value="@@stop@@"></td>
+ </tr>
+ <tr>
+  <th class="heading" colspan="1">find</th>
+  <th class="heading" colspan="3">susp.conf.    class</th>
+  <th class="heading" colspan="1">find</th>
+  <th class="heading" colspan="3">susp.conf.    class</th>
+ </tr>
+<tr>
+  <td class="plain">a1</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@Na1.1@@" @@a1.1@@
+   >-<input type="checkbox" name="@@Na1.2@@" @@a1.2@@
+>+<input type="checkbox" name="@@Na1.3@@" @@a.3@@
+   >±</td>
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@Na1.T@@" value="@@a1.T@@"></td>
+ 
+ <td class="plain">造影頭部</td>
+  <td class="plain"></td>
+  <td class="plain"><input type="checkbox" name="@@N造影頭部.1@@" @@造影頭部.1@@
+ >-<input type="checkbox" name="@@N造影頭部.2@@" @@造影頭部.2@@
+ >+<input type="checkbox" name="@@N造影頭部.3@@" @@造影頭部.3@@
+    >±</td>
+  
+  <td class="plain"><input type="text" class="dirtext"
+      name="@@N造影頭部.T@@" value="@@造影頭部.T@@"></td>
+ </tr>
+ <tr>
+  <td class="plain" colspan="1">Heart Functional Heart Murmur</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na0@@" id="@@a0@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb0@@" id="@@b0@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Organic Heart Murmur</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na1@@" id="@@a1@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb1@@" id="@@b1@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Respiratory Cold Symptoms</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na2@@" id="@@a2@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb2@@" id="@@b2@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Bronchial Asthma</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na3@@" id="@@a3@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb3@@" id="@@b3@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Skin Eczema</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na4@@" id="@@a4@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb4@@" id="@@b4@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Contact Dermatitis</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na5@@" id="@@a5@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb5@@" id="@@b5@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Atopic Dermatitis</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na6@@" id="@@a6@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb6@@" id="@@b6@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Lipoma</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na7@@" id="@@a7@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb7@@" id="@@b7@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Others Tinnitus</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na8@@" id="@@a8@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb8@@" id="@@b8@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Vertigo</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na9@@" id="@@a9@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb9@@" id="@@b9@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Organic Heart Murmur0</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na10@@" id="@@a10@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb10@@" id="@@b10@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Organic Heart Murmur1</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na11@@" id="@@a11@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb11@@" id="@@b11@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Organic Heart Murmur2</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na12@@" id="@@a12@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb12@@" id="@@b12@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Organic Heart Murmur3</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na13@@" id="@@a13@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb13@@" id="@@b13@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Organic Heart Murmur4</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na14@@" id="@@a14@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb14@@" id="@@b14@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Organic Heart Murmur5</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na15@@" id="@@a15@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb15@@" id="@@b15@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Organic Heart Murmur6</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na16@@" id="@@a16@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb16@@" id="@@b16@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Organic Heart Murmur7</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na17@@" id="@@a17@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb17@@" id="@@b17@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Organic Heart Murmur8</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na18@@" id="@@a18@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb18@@" id="@@b18@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Organic Heart Murmur9</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na19@@" id="@@a19@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb19@@" id="@@b19@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Respiratory Cold Symptoms0</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na20@@" id="@@a20@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb20@@" id="@@b20@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Respiratory Cold Symptoms1</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na21@@" id="@@a21@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb21@@" id="@@b21@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Respiratory Cold Symptoms2</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na22@@" id="@@a22@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb22@@" id="@@b22@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Respiratory Cold Symptoms3</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na23@@" id="@@a23@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb23@@" id="@@b23@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <td class="plain" colspan="1">Respiratory Cold Symptoms4</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na24@@" id="@@a24@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb24@@" id="@@b24@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+ 
+
+<td class="plain" colspan="1">Respiratory Cold Symptoms5</td>
+  <td class="plain"></td>
+   
+<td class="plain" colspan="1"><select name="@@Na25@@" id="@@a25@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">susp</option>
+<option value="2">conf</option>
+
+</select>
+<td class="plain" colspan="1"><select name="@@Nb25@@" id="@@b25@@" onKeyPress="return disableEnterKey(this,event)">
+<option value="0">n/a</option>
+<option value="1">normal</option>
+<option value="2">Mild Abnormality</option>
+<option value="3"> Recheck in 12mo.</option>
+<option value="4">Recheck in 6 mon.</option>
+<option value="5">Needs follow-up</option>
+<option value="6">Further Evaluation</option>
+<option value="7">Needs Treatment</option>
+
+</select>
+   
+</tr> 
+
+ <tr>
+  <th class="heading" colspan="8">その他検査情報</th>
+
+  
+</tr>
+<tr>
+  <td class="darker"> </td>
+  <td class="darker"> </td>
+  
+ </tr>
+ <tr>
+  <td class="plain" colspan="8" rowspan="5"
+  ><textarea class="plain miscinfo" cols="60" rows="8"
+    name="@@Nその他@@">@@その他@@</textarea
+  ></td>
+  
+
+</tbody>
+</table>
+

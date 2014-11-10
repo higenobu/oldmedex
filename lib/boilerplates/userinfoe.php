@@ -1,0 +1,50 @@
+<?php // -*- mode: php; coding: euc-japan -*-
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/common.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/manage/department.php';
+
+////////////////////////////////////////////////////////////////
+// Boilerplate user information
+function get_mx_authenticate_user($userid) {
+	$db = mx_db_connect();
+	$q_userid = mx_db_sql_quote($userid);
+	$stmt = mx_userdata_sql($userid, NULL);
+	return  pg_fetch_array(pg_query($db, $stmt));
+}
+
+function mx_prepare_userinfo($auth=NULL)
+{
+  global $mx_authenticate_current_user;
+  if (is_null($auth) || ! is_array($auth) || is_null($auth[2]))
+      $d = get_mx_authenticate_user($mx_authenticate_current_user);
+  else
+      $d = $auth[2];
+
+  $d["Éô½ðÌ¾"] = _lib_u_manage_department_abbrev($d);
+  return $d;
+}
+
+function mx_draw_userinfo($auth=NULL)
+{
+  global $_mx_cheap_layout, $_mx_product_name, $_mx_use_dept_in_reception;
+
+  if ($_mx_product_name == 'MYKARTE')
+    $show_array = array("»áÌ¾");
+  elseif ($_mx_cheap_layout)
+    $show_array = array("¿¦°÷ID", "»áÌ¾");
+  else
+    $show_array = array("¿¦°÷ID", "Éô½ðÌ¾", "¿¦¼ï¡¦¿¦°Ì", "»áÌ¾");
+  $d = mx_prepare_userinfo($auth);
+  if ($_mx_use_dept_in_reception && $d["²ÊÌÜ"])
+    $d["»áÌ¾"] .= " (" . $d["²ÊÌÜ"] . ")";
+  print "<table class=\"tabular-data\">";
+  
+  foreach ($show_array as $a) {
+    print "<tr>";
+//0815-2011
+    print "<th width=\"72\">" . "user" . "</th><td>";
+    print htmlspecialchars($d[$a]);
+    print "</td></tr>\n";
+  }
+  print "</table>\n";
+}
+?>

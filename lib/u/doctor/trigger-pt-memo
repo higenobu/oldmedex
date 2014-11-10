@@ -1,0 +1,100 @@
+ROP TABLE ptmemo;
+
+CREATE TABLE ptmemo
+(
+  "ID" bigserial NOT NULL,
+  "ObjectID" bigint NOT NULL DEFAULT currval('"ptmemo_ID_seq"'::regclass),
+  "Superseded" timestamp without time zone,
+  "CreatedBy" bigint,
+  "OrderDate" date,
+  "患者" bigint,
+  tenki date,
+  a0 character varying,
+  a1 character varying,
+  a2 character varying,
+  a3 character varying,
+  update integer,
+  CONSTRAINT ptmemo_pkey PRIMARY KEY ("ObjectID"),
+  CONSTRAINT "ptmemo_CreatedBy_fkey" FOREIGN KEY ("CreatedBy")
+      REFERENCES mx_authenticate (userid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT ptmemo_fkey FOREIGN KEY ("患者")
+      REFERENCES "患者台帳" ("ObjectID") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+
+*********************
+
+CREATE OR REPLACE FUNCTION addptmemo()
+  RETURNS trigger AS
+$BODY$
+<<addptmemo>>
+    DECLARE
+
+        d_pt        bigint;
+	d_date 	date;
+	d_date2 	date;
+	d_a0 character varying;
+	d_a1 character varying;
+        d_a2 character varying;
+        d_up integer;
+        d_oid bigint; 
+       ko   "患者台帳"%ROWTYPE;
+       
+
+        
+	 
+    BEGIN 
+
+
+
+        IF (TG_OP = 'INSERT' OR TG_OP = 'UPDATE') THEN 
+		d_up := NEW."update";
+            d_pt := NEW."患者";
+            d_date := NEW."OrderDate";
+            d_date2 := NEW."tenki";
+            d_a0 := NEW."a0"; 
+            d_a1 := NEW."a1";
+            d_a2 := NEW."a2"; 
+            
+            
+	select * into ko from "患者台帳" where  "ObjectID"=d_pt and 
+	"Superseded" is null;
+	
+	IF ko."ObjectID" is null THEN
+        
+   	
+	
+	ELSE 
+	
+	
+   	update  "患者台帳" set "アレルギー"=d_a1,
+			  "感染症"=d_a2,
+			  "備考"=d_a0
+
+	where  "ObjectID"=d_pt and 
+		"Superseded" is null;
+	
+        END IF;
+   	END IF;
+   	  
+  	 RETURN null;
+     
+      END 
+
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+
+
+**********************
+CREATE TRIGGER addk
+  AFTER INSERT OR UPDATE OR DELETE
+  ON orderinfo
+  FOR EACH ROW
+  EXECUTE PROCEDURE addk();
+
+

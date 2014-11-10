@@ -1,0 +1,165 @@
+<!-- -*- coding: euc-jp -*- -->
+<STYLE>
+		<!-- 
+		BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-size:small ;}
+		 -->
+</STYLE>
+<TABLE frame="VOID" cellspacing="0" rules="NONE" border="1">
+  <TBODY>
+    <TR>
+      <TD colspan="4" align="center" valign="middle"><FONT size="+2">自立支援申請用診断書</FONT></TD>
+    </TR>
+    <TR>
+      <TD width="200"></TD>
+      <TD width="200"></TD>
+      <TD width="200"></TD>
+      <TD width="200"></TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000;" align="right" colspan="3">記載者：</TD>
+      <TD style="border-bottom: 1pt solid #000000;">@@ユーザ.氏名@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" align="right">作成日：</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="3">@@医療保護-X-自立支援用診断書作成日:draw=date@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" align="left" rowspan="2">患者情報</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" bgcolor="#00ffff">氏名：<BR>
+      @@患者台帳.氏名@@</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" bgcolor="#00ffff">生年月日：<BR>@@患者台帳.生年月日@@生</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" bgcolor="#00ffff">性別：<BR>
+      @@患者台帳.性別@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="3" bgcolor="#00ffff">住所：<BR>
+      〒@@患者台帳.住所0@@ @@患者台帳.住所1@@@@患者台帳.住所2@@@@患者台帳.住所3@@@@患者台帳.住所4@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" rowspan="3">病名</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;">１　主たる精神障害</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;">２　従たる精神障害</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;">３　身体合併症</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" bgcolor="#00ffff">@@紹介元-X-主病名ICD10病名:draw=textarea:option=40,1@@</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" bgcolor="#00ffff">@@紹介元-X-従病名ICD10病名:draw=textarea:option=40,1@@</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" rowspan="2">@@患情問診-X-合併症:draw=textarea:option=40,1@@</TD>
+</TR>
+<TR>
+<TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;">ICD10:@@紹介元-X-主病名ICD10:draw=icd10:option=紹介元-X-主病名ICD10病名@@</TD>
+<TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;">ICD10:@@紹介元-X-従病名ICD10:draw=icd10:option=紹介元-X-従病名ICD10病名@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" rowspan="2">２：発病から現在までの<BR>
+      　　病歴</TD>
+      <TD style="border-bottom: 1pt dotted #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="3">推定発病時期：@@医療保護-X-発病日:draw=date@@　頃</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="3">精神科受診歴等：<BR>
+      @@医療保護-X-受診歴:draw=textarea:option=40,1@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" colspan="2" valign="top">３：現在の病状、状態像<BR>
+      　　※該当項目を選択して下さい<BR>
+      　　　（治療を中止すれば出現する可能性のある症状も含む。）<BR>
+      <BR>
+      （１）　抑うつ状態<BR>
+      @@医療保護-X-抑鬱状態@@
+      @@医療保護-X-抑鬱状態その他@@
+      <BR>
+      （２）　そう状態<BR>
+      @@医療保護-X-躁状態@@
+      @@医療保護-X-躁状態その他@@
+      <BR>
+      （３）　幻覚妄想状態<BR>
+      @@医療保護-X-幻覚妄想状態@@
+      @@医療保護-X-幻覚妄想状態その他@@
+      <BR>
+      （４）　精神運動興奮状態及び昏迷の状態<BR>
+      @@医療保護-X-興奮昏迷状態@@
+      @@医療保護-X-興奮昏迷状態その他@@
+      <BR>
+      （５）　統合失調症等残遺状態<BR>
+      @@医療保護-X-統合失調症等残遺状態@@
+      @@医療保護-X-統合失調症等残遺状態その他@@
+      <BR>
+      （６）　情動及び行動の障害<BR>
+      @@医療保護-X-情動行動障害@@
+      @@医療保護-X-情動行動障害その他@@
+      <BR>
+      （７）　不安及び不穏<BR>
+      @@医療保護-X-不安不穏@@
+      @@医療保護-X-不安不穏その他@@
+      <BR>
+      （８）　けいれん及び意識障害<BR>
+      @@医療保護-X-痙攣意識障害@@
+      @@医療保護-X-痙攣意識障害その他@@
+      <BR>
+      （９）　精神作用物質の乱用及び依存<BR>
+      @@医療保護-X-物質乱用依存@@
+      @@医療保護-X-物質乱用依存その他@@
+      <BR>
+      （１０）　知能障害<BR>
+      @@医療保護-X-精神遅延@@
+      @@医療保護-X-痴呆@@
+      <BR>
+      （１１）その他<BR>
+      @@医療保護-X-現状態像その他@@
+      </TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="2" valign="top">４：３の病状・状態像の具体的程度、症状等<BR>
+        @@医療保護-X-現状態像程度症状:draw=textarea:option=80,50@@
+      </TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt dotted #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="4">５：現在の治療内容</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt dotted #000000; border-left: 1pt solid #000000;" colspan="2">（１）　投薬内容<BR>
+      最終(この診断書を書く時点での最新）処方箋の投薬内容をこの欄に書き込む
+      </TD>
+      <TD style="border-bottom: 1pt dotted #000000; border-left: 1pt dotted #000000; border-right: 1pt solid #000000;" colspan="2" bgcolor="#00ffff">@@医療保護-X-投薬内容:draw=textarea:option=80,5@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt dotted #000000; border-left: 1pt solid #000000;" colspan="2">（２）　精神療法等<BR>
+      　　　　（該当項目を選択してください・東京都の場合コメント欄に入力）</TD>
+      <TD style="border-bottom: 1pt dotted #000000; border-left: 1pt dotted #000000; border-right: 1pt solid #000000;" colspan="2">　@@医療保護-X-自立支援精神療法@@ @@医療保護-X-自立支援精神療法その他@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;" colspan="2">（３）　訪問介護指示の有無</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt dotted #000000; border-right: 1pt solid #000000;" colspan="2">　@@医療保護-X-訪問介護の有無:draw=radio@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;">６：今後の治療方針</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="3">@@医療保護-X-治療方針:draw=textarea:option=80,5@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="4" valign="top">７：現在の精神保健福祉サービスの利用状況（該当項目を選択してください）<BR>
+      　（１）　入所施設<BR>
+	@@医療保護-X-自立支援入所施設@@
+	@@医療保護-X-自立支援入所施設その他@@<BR>
+      　（２）　通所施設<BR>
+	@@医療保護-X-自立支援通所施設@@
+	@@医療保護-X-自立支援通所施設その他@@<BR>
+      　（３）　在宅サービス<BR>
+	@@医療保護-X-自立支援在宅サービス@@
+	@@医療保護-X-自立支援在宅サービスその他@@<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000;">８：備考</TD>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="3">@@医療保護-X-自立支援備考:draw=textarea:option=80,10@@</TD>
+    </TR>
+    <TR>
+      <TD style="border-bottom: 1pt solid #000000; border-left: 1pt solid #000000; border-right: 1pt solid #000000;" colspan="4" valign="top">９：自立支援医療における「重度かつ継続」について<BR>
+      　　※自立支援医療を同時申請する場合に選択。<BR>
+      　　但し、主たる精神障害がF0〜F3及びG40の場合は記入不要。<BR>
+      <BR>
+      　（１）　１病名（１）主たる精神障害のICDコードがF4〜F9であって、情動及び行動の障害又は不安及び不穏状態に該当し計画的・集中的継続的治療を<BR>
+      　　　　要する場合に、該当項目を選択してください。<BR>　　@@医療保護-X-自立支援重度継続病名:draw=radio@@<BR>
+      　（２）　（１）は、3年以上の精神医療の経験を有する医師の診断となるため、該当する項目を選択してください<BR>      　　　@@医療保護-X-自立支援医師:draw=radio@@<BR>　　精神保健指定医の証　第@@医療保護-X-自立支援精神保健指定医@@号<BR>
+　　精神医療に従事した経験年数：@@医療保護-X-自立支援医師年数@@
+      　</TD>
+    </TR>
+  </TBODY>
+</TABLE>

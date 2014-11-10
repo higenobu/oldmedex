@@ -1,0 +1,142 @@
+<?php
+require 'medex_pg_dp.php';
+require 'medex_ds.php';
+#----------- ´µ¼ÔÂæÄ¢ -----------------------------
+class PatientTable extends DataTable {
+  function PatientTable() {
+    DataTable::DataTable("Patient");  // pick a convenient name
+    $c0 = new DataColumn($this,"ObjectID", "int");
+    $c1 = new DataColumn($this, "Superseded", "timestamp");
+    $this->AddColumn($c0);
+    $this->AddColumn($c1);
+    $this->SetPrimaryKey(new PrimaryKey(array($c0, $c1)));
+
+    #$this->AddColumn(new DataColumn($this, "ID","int")); 
+    #$this->AddColumn(new DataColumn($this, "CreatedBy", "int")); 
+    $this->AddColumn(new DataColumn($this, "´µ¼ÔID", "string", "PatientID")); 
+    $this->AddColumn(new DataColumn($this, "À«", "string", "LastName")); 
+    $this->AddColumn(new DataColumn($this, "Ì¾", "string", "FirstName")); 
+    #$this->AddColumn(new DataColumn($this, "¥Õ¥ê¥¬¥Ê", "string", "Kana")); 
+    $this->AddColumn(new DataColumn($this, "À­ÊÌ", "string", "Sex")); 
+    #$this->AddColumn(new DataColumn($this, "Íø¤­¼ê", "string", "Kikite")); 
+    $this->AddColumn(new DataColumn($this, "À¸Ç¯·îÆü", "date", "DOB")); 
+    $this->AddColumn(new DataColumn($this, "½»½ê0", "string", "Addr0")); 
+    $this->AddColumn(new DataColumn($this, "½»½ê1", "string", "Addr1")); 
+    $this->AddColumn(new DataColumn($this, "½»½ê2", "string", "Addr2")); 
+    $this->AddColumn(new DataColumn($this, "½»½ê3", "string", "Addr3")); 
+    $this->AddColumn(new DataColumn($this, "½»½ê4", "string", "Addr4")); 
+    $this->AddColumn(new DataColumn($this, "²ÃÆþÅÅÏÃ", "string", "Phone")); 
+    $this->AddColumn(new DataColumn($this, "·ÈÂÓÅÅÏÃ", "string", "Cell")); 
+    $this->AddColumn(new DataColumn($this, "Æþ³°¶èÊ¬", "string", "IO")); 
+    /*
+    $this->AddColumn(new DataColumn($this, "ÊÝ¸±¼ÔÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "ÈïÊÝ¸±¼Ô", "string")); 
+    $this->AddColumn(new DataColumn($this, "ÈïÊÝ¸±¼Ô¼êÄ¢¤Îµ­¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "ÈïÊÝ¸±¼Ô¼êÄ¢¤ÎÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÉéÃ´¼ÔÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÉéÃ´°åÎÅ¤Î¼õµë¼ÔÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "È¯¾ÉÆü", "date")); 
+    $this->AddColumn(new DataColumn($this, "Æþ±¡Æü", "date")); 
+    $this->AddColumn(new DataColumn($this, "Âà±¡Í½ÄêÆü", "date")); 
+    $this->AddColumn(new DataColumn($this, "Âà±¡Í½Äê¡¦¸«¹þ", "string")); 
+    $this->AddColumn(new DataColumn($this, "»àË´Æü", "date")); 
+    $this->AddColumn(new DataColumn($this, "È÷¹Í", "string")); 
+    $this->AddColumn(new DataColumn($this, "²óÉü´ü", "string")); 
+    $this->AddColumn(new DataColumn($this, "°å³ØÅªÉÔ°ÂÄê", "string")); 
+    $this->AddColumn(new DataColumn($this, "´õË¾ÉÂÅï", "string")); 
+    $this->AddColumn(new DataColumn($this, "·ì±Õ·¿£Á£Â£Ï¼°", "string")); 
+    $this->AddColumn(new DataColumn($this, "·ì±Õ·¿£Ò£è¼°", "string")); 
+    $this->AddColumn(new DataColumn($this, "£È£Â£ó¹³¸¶", "string")); 
+    $this->AddColumn(new DataColumn($this, "¥¢¥ì¥ë¥®¡¼", "string")); 
+    $this->AddColumn(new DataColumn($this, "´¶À÷¾É", "string")); 
+    $this->AddColumn(new DataColumn($this, "Æ©ÀÏ´µ¼Ô¥Õ¥é¥°", "string")); 
+    $this->AddColumn(new DataColumn($this, "¶ÐÌ³ÀèÌ¾", "string")); 
+    $this->AddColumn(new DataColumn($this, "¶ÐÌ³ÀèÍ¹ÊØÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "¶ÐÌ³Àè½»½ê", "string")); 
+    $this->AddColumn(new DataColumn($this, "¶ÐÌ³ÀèÅÅÏÃÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "ÀÁµáÀèÌ¾", "string")); 
+    $this->AddColumn(new DataColumn($this, "ÀÁµáÀèÍ¹ÊØÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "ÀÁµáÀè½»½ê", "string")); 
+    $this->AddColumn(new DataColumn($this, "ÀÁµáÀèÅÅÏÃÈÖ¹æ", "string")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÍ­¸ú´ü¸Â", "date")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÉéÃ´¼ÔÈÖ¹æ2", "string")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÉéÃ´°åÎÅ¤Î¼õµë¼ÔÈÖ¹æ2", "string")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÍ­¸ú´ü¸Â2", "date")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÉéÃ´¼ÔÈÖ¹æ3", "string")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÉéÃ´°åÎÅ¤Î¼õµë¼ÔÈÖ¹æ3", "string")); 
+    $this->AddColumn(new DataColumn($this, "¸øÈñÍ­¸ú´ü¸Â3", "date"));  
+    */
+  }
+}
+
+#----------- ÌôºÞ½èÊýäµ ----------------------------
+class RxOrderTable extends DataTable {
+  function RxOrderTable() {
+    DataTable::DataTable("RxOrder");
+    $c0 = new DataColumn($this, "ObjectID", "int");
+    $c1 = new DataColumn($this, "Superseded", "timestamp");
+    $c2 = new DataColumn($this, "´µ¼Ô", "int", "PatientObjectID");
+    $c3 = new DataColumn($this, "½èÊýÇ¯·îÆü", "date", "RxOrderDate");
+    $c4 = new DataColumn($this, "Print", "string", "Print");
+    $this->AddColumn($c0);
+    $this->AddColumn($c1);
+    $this->AddColumn($c2);
+    $this->AddColumn($c3);
+    $this->AddColumn($c4);
+    $this->SetPrimaryKey(new PrimaryKey(array($c0, $c1)));
+  }
+}
+
+class RxOrderContentTable extends DataTable {
+  function RxOrderContentTable() {
+    DataTable::DataTable("RxOrderContent");
+    $c0 = new DataColumn($this, "ObjectID", "int");
+    $c1 = new DataColumn($this, "ÌôºÞ½èÊýäµ", "int", "RxOrderObjectID");
+    $this->AddColumn($c0);
+    $this->AddColumn($c1);
+  }
+}
+
+#------------ ¥«¥ë¥Æ --------------------------------
+class KarteTable extends DataTable {
+  function KarteTable() {
+    DataTable::DataTable("Karte");
+    $c0 = new DataColumn($this, "ObjectID", "int");
+    $c1 = new DataColumn($this, "Superseded", "timestamp");
+    $c2 = new DataColumn($this, "patient", "int");
+    $c3 = new DataColumn($this, "xhtml", "string");
+    $this->AddColumn($c0);
+    $this->AddColumn($c1);
+    $this->AddColumn($c2);
+    $this->AddColumn($c3);
+    $this->SetPrimaryKey(new PrimaryKey(array($c0)));
+  }
+}
+
+class MedexDataSet extends DataSet {
+  function MedexDataSet() {
+    DataSet::DataSet();
+    // create tables
+    $this->AddTable(new PatientTable());
+    $this->AddTable(new RxOrderTable());
+    $this->AddTable(new RxOrderContentTable());
+    $this->AddTable(new KarteTable());
+    $this->AddRelation(new DataRelation
+		       ("rx_order_2_rx_order_content",
+			$this->Tables["RxOrder"]->Columns["ObjectID"],
+			$this->Tables["RxOrderContent"]->Columns["ÌôºÞ½èÊýäµ"]
+			));
+
+    $this->AddRelation(new DataRelation
+		       ("patient_2_rx_order",
+			$this->Tables["Patient"]->Columns["ObjectID"],
+			$this->Tables["RxOrder"]->Columns["´µ¼Ô"]
+			));
+    $this->AddRelation(new DataRelation
+		       ("patient_2_karte",
+			$this->Tables["Patient"]->Columns["ObjectID"],
+			$this->Tables["Karte"]->Columns["patient"]
+			));
+  }
+}
+?>

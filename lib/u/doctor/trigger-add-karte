@@ -1,0 +1,89 @@
+
+CREATE TABLE orderinfo
+(
+  "ID" bigserial NOT NULL,
+  "ObjectID" bigint NOT NULL DEFAULT currval('"orderinfo_ID_seq"'::regclass),
+  "Superseded" timestamp without time zone,
+  "CreatedBy" bigint,
+  orderdate date,
+  patient bigint,
+  ordertype character varying,
+  "content" character varying,
+  stop character varying,
+  oid bigserial NOT NULL,
+  "update" integer,
+  CONSTRAINT orderinfo_pkey PRIMARY KEY ("ObjectID")
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE orderinfo OWNER TO postgres;
+
+-- Trigger: addk on orderinfo
+
+-- DROP TRIGGER addk ON orderinfo;
+
+CREATE TRIGGER addk
+  AFTER INSERT OR UPDATE OR DELETE
+  ON orderinfo
+  FOR EACH ROW
+  EXECUTE PROCEDURE addk();
+
+**************************************
+CREATE OR REPLACE FUNCTION addk()
+  RETURNS trigger AS
+$BODY$
+<<addk>>
+    DECLARE
+
+        d_pt        bigint;
+	d_date date;
+	d_type character varying;
+	d_cont character varying;
+        d_cont2 character varying;
+        d_up integer;
+        d_oid bigint; 
+       ko   "カルテデモ表"%ROWTYPE;
+       
+
+        
+	 
+    BEGIN 
+
+
+
+        IF (TG_OP = 'INSERT' OR TG_OP = 'UPDATE') THEN 
+		d_up := NEW."update";
+            d_pt := NEW."patient";
+            d_date := NEW."orderdate";
+            d_cont := NEW."content"; 
+	select * into ko from "カルテデモ表" where "日付"=d_date and "患者"=d_pt and 
+	"Superseded" is null;
+	
+	IF ko."患者" is null THEN
+        
+   	insert into "カルテデモ表" (  "患者", "日付","P") values
+	(d_pt,d_date,d_cont);
+	
+	ELSE 
+	IF (d_up=1) THEN
+	d_cont2=ko."P"||E'\r\n'|| '-----(updated to)-----'||d_cont;
+   	update  "カルテデモ表" set "P"=d_cont2 where "日付"=d_date and "患者"=d_pt and 
+	"Superseded" is null; 
+	 ELSE
+	 d_cont2=ko."P"||E'\r\n'||'-----(New)------------'||d_cont;
+   	update  "カルテデモ表" set "P"=d_cont2 where "日付"=d_date and "患者"=d_pt and 
+	"Superseded" is null; 
+     	END IF;
+        END IF;
+   	 END IF;
+   	  
+  	 RETURN null;
+     
+      END 
+
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION addk() OWNER TO postgres;
+

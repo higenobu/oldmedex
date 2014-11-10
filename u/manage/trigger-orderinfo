@@ -1,0 +1,61 @@
+-- Function: addk()
+
+DROP FUNCTION addk() cascade;
+
+CREATE OR REPLACE FUNCTION addk()
+  RETURNS trigger AS
+$BODY$
+<<addk>>
+    DECLARE
+
+        d_pt        bigint;
+	d_date date;
+	d_type character varying;
+	d_cont character varying;
+        d_cont2 character varying;
+        
+        d_oid bigint; 
+       ko   karte%ROWTYPE;
+       
+
+        
+	 
+    BEGIN 
+
+
+
+        IF (TG_OP = 'INSERT' ) THEN 
+
+            d_pt := NEW."patient";
+            d_date := NEW."orderdate";
+            d_cont := NEW."content"; 
+	select * into ko from karte where order_date=d_date and "patient"=d_pt;
+	
+	IF ko."patient" is null THEN
+        
+   	insert into "karte" ("patient", "order_date","P") values
+	(d_pt,d_date,d_cont);
+	ELSE
+	d_cont2=ko."P"||'\n'||d_cont;
+   	update  "karte" set "P"=d_cont2 where order_date=d_date and "patient"=d_pt;
+
+     	END IF;
+         
+   	 END IF;
+   	  
+  	 RETURN null;
+     
+      END 
+
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+
+
+
+
+CREATE TRIGGER addk
+  AFTER INSERT OR UPDATE OR DELETE
+  ON orderinfo
+  FOR EACH ROW
+  EXECUTE PROCEDURE addk();

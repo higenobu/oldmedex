@@ -1,0 +1,66 @@
+<HTML>
+  <HEAD>
+    <META http-equiv="CONTENT-TYPE" content="text/html; charset=EUC-JP">
+    <META http-equiv="Content-Style-Type" content="text/css">
+    <STYLE>
+      <!-- 
+	   BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-size:x-small ;}
+	-->
+    </STYLE>
+    <TITLE>院　内　処　方　箋</TITLE>	
+  </HEAD>
+  <BODY text="#000000">
+    <TABLE frame="VOID" cellspacing="0" rules="NONE" border="1">
+      <TBODY>
+	<TR>
+	  <TD colspan="6" height="33" align="CENTER" valign="MIDDLE"><B><FONT SIZE=5>院　内　処　方　箋</FONT></B></TD>
+	</TR>
+	<TR>
+	  <TD style="border-top: 2pt solid #000000; border-bottom: 1pt solid #000000; border-left: 2pt solid #000000;" colspan="2" align="right" valign="MIDDLE" height="60"  width="100"><FONT COLOR="#0000FF">${DateOfIssue}</FONT></TD>
+	  <TD style="border-top: 2pt solid #000000; border-bottom: 1pt solid #000000; border-right: 1pt solid #000000" align="LEFT" valign="MIDDLE" height="60"  width="60">発行</TD>
+	  <TD style="border-top: 2pt solid #000000; border-bottom: 1pt solid #000000; border-right: 1pt solid #000000;" align="LEFT" valign="MIDDLE" height="60"  width="100">ID:${PatientID}</TD>
+	  <TD style="border-top: 2pt solid #000000; border-bottom: 1pt solid #000000; " valign="MIDDLE" align="center" height="60"  width="60">記載者</TD>
+	  <TD style="border-top: 2pt solid #000000; border-bottom: 1pt solid #000000; border-right: 2pt solid #000000" align="LEFT" valign="MIDDLE" height="60" width="60"><FONT color="#0000FF">${EnteredBy}</FONT></TD>
+	</TR>
+	<TR>
+	  <TD style="border-left: 2pt solid #000000; border-right: 1pt solid #000000;" align="CENTER" valign="MIDDLE" height="30"><FONT COLOR="#0000FF">${PatientGroup}</FONT></TD>
+	  <TD align="center" valign="MIDDLE" height="30">患者名</TD>
+	  <TD style="border-right: 1pt solid #000000;" colspan="2" align="LEFT" valign="MIDDLE" height="30">${PatientName}</TD>
+	  <TD align="right" valign="MIDDLE" width="60" height="30"><FONT color="#0000FF">${PatientAge}</FONT></TD>
+	  <TD style="border-right: 2pt solid #000000;" align="LEFT" valign="MIDDLE" height="30">歳</TD>
+	</TR>
+	<TR>
+	  <TD style="border-top: 1pt solid #000000; border-bottom: 1pt solid #000000; border-left: 2pt solid #000000; border-right: 1pt solid #000000" colspan="4" rowspan="5" align="LEFT" valign="TOP"><FONT COLOR="#0000FF">
+	      <PRE>
+		${RxBody}
+	      </PRE>
+	  <TD style="border-bottom: 1pt dotted #000000; border-top: 1pt solid #000000; border-right: 2pt solid #000000" colspan="3" align="CENTER" valign="MIDDLE" height="20">医師（指示者）</TD>
+	</TR>
+	<TR>
+	  <TD style="border-bottom: 1pt solid #000000; border-right: 2pt solid #000000" colspan="3" align="CENTER" valign="MIDDLE" height="30"><FONT COLOR="#0000FF">${DrName}</FONT></TD>
+	</TR>
+	<TR>
+	  <TD style="border-right: 2pt solid #000000" colspan="3" align="CENTER" valign="MIDDLE" height="230"><FONT COLOR="#0000FF">入院時</FONT></TD>
+	</TR>
+	<TR>
+	  <TD style="border-top: 1pt solid #000000; border-bottom: 1pt dotted #000000; border-right: 2pt solid #000000" colspan="3" align="CENTER" valign="MIDDLE" height="20">調剤者</TD>
+	</TR>
+	<TR>
+	  <TD style="border-bottom: 1pt solid #000000; border-right: 2pt solid #000000" colspan="3" align="LEFT" valign="MIDDLE" height="90">&nbsp;</TD>
+	</TR>
+	<TR>
+	  <TD style="border-bottom: 2pt solid #000000; border-left: 2pt solid #000000; border-right: 1pt solid #000000;" colspan="4" rowspan="2" align="LEFT" valign="TOP">備考欄</TD>
+	  <TD style="border-bottom: 1pt dotted #000000; border-right: 1pt solid #000000" align="CENTER" valign="MIDDLE" height="20">医事</TD>
+	  <TD style="border-bottom: 1pt dotted #000000; border-right: 2pt solid #000000" align="CENTER" valign="MIDDLE" height="20">受領者</TD>
+	</TR>
+	<TR>
+	  <TD style="border-bottom: 2pt solid #000000; border-right: 1pt solid #000000" align="LEFT" valign="MIDDLE" height="60">&nbsp;</TD>
+	  <TD style="border-bottom: 2pt solid #000000; border-right: 2pt solid #000000" align="LEFT" valign="MIDDLE" height="60">&nbsp;</TD>
+	</TR>
+	<TR>
+	  <TD colspan="6" align="CENTER" valign="MIDDLE" height="20">${HospitalName}</TD>
+	</TR>
+      </TBODY>
+    </TABLE>
+  </BODY>
+</HTML>

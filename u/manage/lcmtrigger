@@ -1,0 +1,74 @@
+CREATE OR REPLACE FUNCTION lcm()
+  RETURNS trigger AS
+$BODY$
+<<update_lcm>>
+    DECLARE
+
+        d_pt        bigint;
+	 
+        d_date      date;
+         
+       	d_lcmid bigint;
+	d_kubun character varying;
+	d_cont character varying;
+        
+        
+       
+       ota_sum   "lcmrep"%ROWTYPE;
+CREATE TRIGGER lcm
+  AFTER INSERT OR UPDATE OR DELETE
+  ON "lcmrep"
+  FOR EACH ROW
+  EXECUTE PROCEDURE lcm();
+
+       
+    BEGIN 
+
+
+
+        IF (TG_OP = 'INSERT' OR TG_OP='UPDATE') THEN 
+
+            d_pt := NEW."ptid";
+            d_date := NEW."orderdate";
+             d_cont :=NEW."cont1";
+              
+		d_kubun :=NEW."kubun"; 
+		d_lcmid :=NEW."lcmid";
+
+        	 
+
+
+   	IF (d_kubun = 'a ') THEN 
+	update otatest_order
+	set special_req =d_cont 
+	 
+	where    "ID"=d_lcmid;   
+ 	 END IF;
+	IF (d_kubun = 'b ') THEN 
+	update otatest_order
+	set notes =d_cont 
+	 
+	where    "ID"=d_lcmid;   
+ 	 END IF;
+
+         
+        
+         
+   	
+         
+
+        	
+
+		
+   END IF;   
+         
+   
+  	RETURN null;
+     
+      END 
+
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ 
+

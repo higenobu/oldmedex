@@ -1,0 +1,21 @@
+#menu {
+    padding: 0;
+    margin: 0;
+}
+#menu li ul {
+    display: none;
+    position: absolute;
+    left: 0; /*aligns the dropdown to the horizontal tabs*/
+}
+#menu li:hover ul, #menu li.over ul {
+    display: block;
+    padding: 0;
+}
+#menu li a:hover {
+    background: #EAF6F5 url(shadow3.png) repeat-x top left;
+    text-decoration: underline;
+}
+#menu li ul li {
+    height: 30px;
+    line-height: 30px;
+}

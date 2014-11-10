@@ -1,0 +1,35 @@
+CREATE TABLE test_omst
+(
+  "testid" integer,
+  "testcode" character varing(10),
+  "etestname" character varying(100),
+  "jtestname" character varying(100),
+ 
+  "Unit" character varying(50),
+
+  "mrange" character varying(100),
+  
+  "frange" character varying(100),
+  "category" character varying(50),
+  
+  "sortorder" integer,
+  "Comment1" character varying(200),
+"Comment1" character varying(200),
+"Comment2" character varying(200),
+"Comment3" character varying(200),
+"Comment4" character varying(200),
+"Comment5" character varying(200),
+"Comment6" character varying(200),
+"Comment7" character varying(200),
+"Comment8" character varying(200)
+
+  "active"  integer
+  )
+
+insert into test_omst select testid,testcode,etestname, jtestname,"Unit", mrange from test_omst_wk1;
+
+
+
+copy test_omst_wk1 from '/home/medex/ocmb.csv' using delimiters ','
+
+copy test_omst to '/home/medex/testomst.sql'

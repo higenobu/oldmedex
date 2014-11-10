@@ -1,0 +1,693 @@
+<?php // -*- mode: php; coding: euc-japan -*-
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/los.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/sod.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/soe.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/common.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/ppa.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/doctor/pdf4.php';
+
+function __lib_u_doctor_xctorder_cfg(&$cfg)
+{
+$cfg = array_merge(
+
+array(
+TABLE => 'xctorder',
+'ALLOW_SORT' => 1,
+ 'DEFAULT_SORT' => 'orderdate',
+ COLS => array(
+ "orderdate" ,
+ "plandate",
+ "procdate" ,
+  "´µ¼Ô" ,
+  "teikikubun",
+  "xctkubun" ,
+  "techname",
+  "techid" ,
+  "bui1" ,
+  "bui2" ,
+ "bui3" ,
+ "bui4" ,
+ "bui5",
+"memo1",
+"memo2" ,
+"memo3" ,
+"memo4" ,
+"memo5" ,
+"memo11" ,
+"memo21" ,
+"memo31" ,
+"memo41" ,
+"memo51",
+"memo12" ,
+"memo22" ,
+"memo32" ,
+"memo42" ,
+"memo52",
+"syoken1" ,
+"syoken2" ,
+"syoken3" ,
+"syoken4" ,
+"syoken5" ,
+"techsyoken" ,
+"drsyoken" ,
+"proof" 
+ ),
+
+LCOLS => array(
+array('Column' => 'orderdate',
+'Label' => '°ÍÍêÆü'),			      
+array('Column' => 'plandate',
+'Label' => 'Í½ÄêÆü'),
+array('Column' => 'procdate',
+'Label' => '¼Â»ÜÆü'),
+/*array('Column' => 'xctkubun',
+'Label' => 'CXT-Kubun'),*/
+array('Column' => 'xctkubun',
+					'Label' => 'XCT-Kubun',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+ '170001910' => 'X',
+'170011810' => 'CT',
+'170020110' => 'MRI'
+
+						     )
+				       ),
+
+
+
+/* array('Column' => 'bui1',
+'Label' => 'Éô°Ì£±'),*/
+
+array('Column' => 'bui1',
+					'Label' => 'Éô°Ì1',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array
+('' => '',
+ '002000004' => 'Ã±½ãÆ¬Éô',
+ '002000005' => 'Ã±½ã¶»Éô',
+ 
+ '002000001' => '¶»Éô',
+ '002000002' => 'Ê¢Éô',
+ '002000003' => 'Æ¬Éô',
+ 
+ '¤½¤ÎÂ¾' => '¤½¤ÎÂ¾')),
+array('Column' => 'bui2',
+'Label' => 'Éô°Ì£²'),
+array('Column' => 'bui3',
+'Label' => 'Éô°Ì£³'),
+
+array('Column' => 'bui4',
+'Label' => 'Éô°Ì£´'),
+array('Column' => 'bui5',
+'Label' => 'Éô°Ì£µ'),
+array('Column' => 'proof',
+'Label' => '¼Â»Ü¡¦Ì¤¡¦ºÑ')),
+
+
+'DEFAULT_SORT' => 'orderdate',
+
+DCOLS => array(
+array('Column' => 'orderdate',
+'Label' => '°ÍÍêÆü'
+),			      
+array('Column' => 'plandate',
+'Label' => 'Í½ÄêÆü'),
+array('Column' => 'procdate',
+'Label' => '¼Â»ÜÆü'),
+/* array('Column' => 'xctkubun',
+'Label' => 'XCT-KUBUN'), */
+array('Column' => 'xctkubun',
+					'Label' => 'XCT-Kubun',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+ '170001910' => 'X',
+'170011810' => 'CT',
+'170020110' => 'MRI'
+
+						     )
+				       ),
+
+
+
+array('Column' => 'memo1',
+'Label' => '»Ø¼¨'),
+
+array('Column' => 'memo2',
+'Label' => '½èÊý'),
+
+/* array('Column' => 'bui1',
+'Label' => 'Éô°Ì£±'),*/
+
+
+array('Column' => 'bui1',
+					'Label' => 'Éô°Ì1',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array
+('' => '',
+ '002000004' => 'Ã±½ãÆ¬Éô',
+ '002000005' => 'Ã±½ã¶»Éô',
+ 
+ '002000001' => '¶»Éô',
+ '002000002' => 'Ê¢Éô',
+ '002000003' => 'Æ¬Éô',
+ 
+ '¤½¤ÎÂ¾' => '¤½¤ÎÂ¾')),
+
+array('Column' => 'bui2',
+'Label' => 'Éô°Ì£²'),
+array('Column' => 'bui3',
+'Label' => 'Éô°Ì£³'),
+
+array('Column' => 'bui4',
+'Label' => 'Éô°Ì£´'),
+array('Column' => 'bui5',
+'Label' => 'Éô°Ì£µ'),
+array('Column' => 'techsyoken',
+'Label' => 'µ»»Õ¥³¥á¥ó¥È'),			      
+array('Column' => 'drsyoken',
+'Label' => '°å»Õ½ê¸«'),
+array('Column' => 'proof',
+'Label' => '¼Â»Ü¡¦Ì¤¡¦ºÑ')
+),
+
+
+ECOLS => array(
+array('Column' => 'orderdate','Label' => '°ÍÍêÆü',
+'Draw' => 'date',
+'Option' => array('validate' => 'date,nonnull', 'list' => 1)
+),
+
+array('Column' => 'plandate',
+'Label' => '¼Â»ÜÍ½ÄêÆü',
+				       'Draw' => 'date',
+				       'Option' => array('validate' =>
+							 'date')),
+
+array('Column' => 'procdate',
+'Label' => '¼Â»ÜÆü',
+				       'Draw' => 'date',
+				       'Option' => array('validate' =>
+							 'date')),
+
+array('Column' => 'xctkubun',
+					'Label' => 'XCT-Kubun',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+ '170001910' => 'X',
+'170011810' => 'CT',
+'170020110' => 'MRI'
+
+						     )
+				       ),
+
+
+ array('Column' => 'memo1',
+					'Label' => '»Ø¼¨',
+				    'Draw' => 'textarea',
+'Option' => array('vocab' => array('SOLct'),
+'cols' => 80)
+
+),
+array('Column' => 'memo2',
+					'Label' => '½èÊý',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+ '¥¤¥ª¥Ð¥ß¥í¥ó300' => '¥¤¥ª¥Ð¥ß¥í¥ó£³£°£°',
+'¥ª¥à¥Ë¥Ð¡¼¥°240' => '¥ª¥à¥Ë¥Ð¡¼¥°240',
+'¥¬¥¹¥È¥í¥°¥é¥Õ¥£¥ó' => '¥¬¥¹¥È¥í¥°¥é¥Õ¥£¥ó',
+'¥Ð¥ê¥È¥²¥ó£³£°£°' => '¥Ð¥ê¥È¥²¥ó£³£°£°',
+'¥Ð¥ì¥Ã¥¯¥¹¥â¥ë¥È£Ó' => '¥Ð¥ì¥Ã¥¯¥¹¥â¥ë¥È£Ó',
+'¥Ð¥ê¥¨¥Í¥Þ£³£°£°' => '¥Ð¥ê¥¨¥Í¥Þ£³£°£°',
+'¥Ó¥ê¥¹¥³¥Ó¥ó£Ä£É£Ã£µ£°' => '¥Ó¥ê¥¹¥³¥Ó¥ó£Ä£É£Ã£µ£°',
+'¤½¤ÎÂ¾¤ÎÂ¤±ÆºÞ' => '¤½¤ÎÂ¾¤ÎÂ¤±ÆºÞ',
+'Í¢±ÕÅÀÅ©¥»¥Ã¥È¡Ê¥Ç¥£¥¹¥Ý¡Ë' => 'Í¢±ÕÅÀÅ©¥»¥Ã¥È¡Ê¥Ç¥£¥¹¥Ý¡Ë',
+
+'Íã¾õ¿Ë' => 'Íã¾õ¿Ë',
+
+'À¸¿©Ãí' => 'À¸¿©Ãí',
+'¥¹¥Ý¥é¥ß¥óÃí¥·¥ê¥ó¥¸¡Ê20ml/1ml¡Ë' => '¥¹¥Ý¥é¥ß¥óÃí¥·¥ê¥ó¥¸¡Ê20ml/1ml¡Ë',
+'¥°¥ë¥«¥´¥ó' => '¥°¥ë¥«¥´¥ó',
+						     )
+				       ),
+
+
+array('Column' => 'bui1',
+					'Label' => 'Éô°Ì1',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array
+('' => '',
+ '002000004' => 'Ã±½ãÆ¬Éô',
+ '002000005' => 'Ã±½ã¶»Éô',
+ 
+ '002000001' => '¶»Éô',
+ '002000002' => 'Ê¢Éô',
+ '002000003' => 'Æ¬Éô',
+ 
+ '¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'),
+				    'Option' => array('validate' =>
+							 'nonnull')),
+
+array('Column' => 'memo11',
+					'Label' => '¥Õ¥£¥ë¥à¥µ¥¤¥º1',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+ '01' => 'È¾ÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'02' => 'Âç»Í¤ÄÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => '»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => 'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+
+'¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+						     )
+				       ),
+
+
+array('Column' => 'memo12',
+					'Label' => 'Ëç¿ô£±',
+				    'Draw' => 'text'),
+
+array('Column' => 'bui2',
+					'Label' => 'Éô°Ì2',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+'002000001' => 'Ã±½ãÆ¬Éô',
+ '002000002' => 'Ã±½ã¶»Éô',
+ 'Ã±½ãÊ¢Éô' => 'Ã±½ãÊ¢Éô',
+ 'Ã±½ã¹üÈ×¹Ð' => 'Ã±½ã¹üÈ×¹Ð',
+ 'Â¤±ÆÆ¬Éô' => 'Â¤±ÆÆ¬Éô',
+ 'Â¤±Æ¶»Éô' => 'Â¤±Æ¶»Éô',
+ 'Â¤±ÆÊ¢Éô' => 'Â¤±ÆÊ¢Éô',
+ 'Â¤±Æ¹üÈ×¹Ð' => 'Â¤±Æ¹üÈ×¹Ð',
+ '002000001' => '¶»Éô',
+ '002000002' => 'Ê¢Éô',
+ '002000003' => 'Æ¬Éô',
+ '·ÛÄÇ' => '·ÛÄÇ',
+ '¶»ÄÇ' => '¶»ÄÇ',
+ '¹øÄÇ' => '¹øÄÇ',
+ '¹üÈ×' => '¹üÈ×',
+ 'º¿¹ü' => 'º¿¹ü',
+ '¶»¹ü' => '¶»¹ü',
+ '¸ª´ØÀá' => '¸ª´ØÀá',
+ 
+ '¾åÏÓ' => '¾åÏÓ',
+ 'Éª´ØÀá' => 'Éª´ØÀá',
+ 'Á°ÏÓ' => 'Á°ÏÓ',
+ '¼ê´ØÀá' => '¼ê´ØÀá',
+ '¼ê»Ø' => '¼ê»Ø',
+ '¸Ô´ØÀá' => '¸Ô´ØÀá',
+ '²¼ÂÜ' => '²¼ÂÜ',
+
+ 'Â­´ØÀá' => 'Â­´ØÀá',
+ '£Í£Ä£Ì' => '£Í£Ä£Ì',
+ '£Ä£Ä£Ì' => '£Ä£Ä£Ì',
+ '£Ä£É£Ã' => '£Ä£É£Ã',
+ '£Ä£É£Ð' => '£Ä£É£Ð',
+ '£Ë£Õ£Â' => '£Ë£Õ£Â',
+ '£Õ£Ö£Ç' => '£Õ£Ö£Ç',
+ '£Ú£Ç' => '£Ú£Ç',
+ '¹ü±öÄêÎÌ' => '¹ü±öÄêÎÌ',
+'¸Ô´ØÀáÀµÌÌÁü' => '¸Ô´ØÀáÀµÌÌÁü',
+'¸Ô´ØÀá¼Ð°ÌÁü' => '¸Ô´ØÀá¼Ð°ÌÁü',
+ '¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+
+						     )
+				       ),
+array('Column' => 'memo21',
+					'Label' => '¥Õ¥£¥ë¥à¥µ¥¤¥º2',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+  '01' => 'È¾ÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'02' => 'Âç»Í¤ÄÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => '»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => 'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+						     )
+				       ),
+
+
+array('Column' => 'memo22',
+					'Label' => 'Ëç¿ô2',
+				    'Draw' => 'text'),
+
+
+
+array('Column' => 'bui3',
+					'Label' => 'Éô°Ì3',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						       'Ã±½ãÆ¬Éô' => 'Ã±½ãÆ¬Éô',
+ 'Ã±½ã¶»Éô' => 'Ã±½ã¶»Éô',
+ 'Ã±½ãÊ¢Éô' => 'Ã±½ãÊ¢Éô',
+ 'Ã±½ã¹üÈ×¹Ð' => 'Ã±½ã¹üÈ×¹Ð',
+ 'Â¤±ÆÆ¬Éô' => 'Â¤±ÆÆ¬Éô',
+ 'Â¤±Æ¶»Éô' => 'Â¤±Æ¶»Éô',
+ 'Â¤±ÆÊ¢Éô' => 'Â¤±ÆÊ¢Éô',
+ 'Â¤±Æ¹üÈ×¹Ð' => 'Â¤±Æ¹üÈ×¹Ð',
+ '¶»Éô' => '¶»Éô',
+ 'Ê¢Éô' => 'Ê¢Éô',
+ 'Æ¬Éô' => 'Æ¬Éô',
+ '·ÛÄÇ' => '·ÛÄÇ',
+ '¶»ÄÇ' => '¶»ÄÇ',
+ '¹øÄÇ' => '¹øÄÇ',
+ '¹üÈ×' => '¹üÈ×',
+ 'º¿¹ü' => 'º¿¹ü',
+ '¶»¹ü' => '¶»¹ü',
+ '¸ª´ØÀá' => '¸ª´ØÀá',
+ 
+ '¾åÏÓ' => '¾åÏÓ',
+ 'Éª´ØÀá' => 'Éª´ØÀá',
+ 'Á°ÏÓ' => 'Á°ÏÓ',
+ '¼ê´ØÀá' => '¼ê´ØÀá',
+ '¼ê»Ø' => '¼ê»Ø',
+ '¸Ô´ØÀá' => '¸Ô´ØÀá',
+ '²¼ÂÜ' => '²¼ÂÜ',
+
+ 'Â­´ØÀá' => 'Â­´ØÀá',
+ '£Í£Ä£Ì' => '£Í£Ä£Ì',
+ '£Ä£Ä£Ì' => '£Ä£Ä£Ì',
+ '£Ä£É£Ã' => '£Ä£É£Ã',
+ '£Ä£É£Ð' => '£Ä£É£Ð',
+ '£Ë£Õ£Â' => '£Ë£Õ£Â',
+ '£Õ£Ö£Ç' => '£Õ£Ö£Ç',
+ '£Ú£Ç' => '£Ú£Ç',
+ '¹ü±öÄêÎÌ' => '¹ü±öÄêÎÌ',
+'¸Ô´ØÀáÀµÌÌÁü' => '¸Ô´ØÀáÀµÌÌÁü',
+'¸Ô´ØÀá¼Ð°ÌÁü' => '¸Ô´ØÀá¼Ð°ÌÁü',
+ '¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+
+ )
+),
+array('Column' => 'memo31',
+					'Label' => '¥Õ¥£¥ë¥à¥µ¥¤¥º3',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+  '01' => 'È¾ÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'02' => 'Âç»Í¤ÄÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => '»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => 'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+						     )
+				       ),
+
+
+array('Column' => 'memo32',
+					'Label' => 'Ëç¿ô3',
+				    'Draw' => 'text'),
+
+
+array('Column' => 'bui4',
+					'Label' => 'Éô°Ì4',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+'Ã±½ãÆ¬Éô' => 'Ã±½ãÆ¬Éô',
+ 'Ã±½ã¶»Éô' => 'Ã±½ã¶»Éô',
+ 'Ã±½ãÊ¢Éô' => 'Ã±½ãÊ¢Éô',
+ 'Ã±½ã¹üÈ×¹Ð' => 'Ã±½ã¹üÈ×¹Ð',
+ 'Â¤±ÆÆ¬Éô' => 'Â¤±ÆÆ¬Éô',
+ 'Â¤±Æ¶»Éô' => 'Â¤±Æ¶»Éô',
+ 'Â¤±ÆÊ¢Éô' => 'Â¤±ÆÊ¢Éô',
+ 'Â¤±Æ¹üÈ×¹Ð' => 'Â¤±Æ¹üÈ×¹Ð',
+ '¶»Éô' => '¶»Éô',
+ 'Ê¢Éô' => 'Ê¢Éô',
+ 'Æ¬Éô' => 'Æ¬Éô',
+ '·ÛÄÇ' => '·ÛÄÇ',
+ '¶»ÄÇ' => '¶»ÄÇ',
+ '¹øÄÇ' => '¹øÄÇ',
+ '¹üÈ×' => '¹üÈ×',
+ 'º¿¹ü' => 'º¿¹ü',
+ '¶»¹ü' => '¶»¹ü',
+ '¸ª´ØÀá' => '¸ª´ØÀá',
+ 
+ '¾åÏÓ' => '¾åÏÓ',
+ 'Éª´ØÀá' => 'Éª´ØÀá',
+ 'Á°ÏÓ' => 'Á°ÏÓ',
+ '¼ê´ØÀá' => '¼ê´ØÀá',
+ '¼ê»Ø' => '¼ê»Ø',
+ '¸Ô´ØÀá' => '¸Ô´ØÀá',
+ '²¼ÂÜ' => '²¼ÂÜ',
+
+ 'Â­´ØÀá' => 'Â­´ØÀá',
+ '£Í£Ä£Ì' => '£Í£Ä£Ì',
+ '£Ä£Ä£Ì' => '£Ä£Ä£Ì',
+ '£Ä£É£Ã' => '£Ä£É£Ã',
+ '£Ä£É£Ð' => '£Ä£É£Ð',
+ '£Ë£Õ£Â' => '£Ë£Õ£Â',
+ '£Õ£Ö£Ç' => '£Õ£Ö£Ç',
+ '£Ú£Ç' => '£Ú£Ç',
+ '¹ü±öÄêÎÌ' => '¹ü±öÄêÎÌ',
+'¸Ô´ØÀáÀµÌÌÁü' => '¸Ô´ØÀáÀµÌÌÁü',
+'¸Ô´ØÀá¼Ð°ÌÁü' => '¸Ô´ØÀá¼Ð°ÌÁü',
+ '¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+
+						     )
+				       ),
+
+array('Column' => 'memo41',
+					'Label' => '¥Õ¥£¥ë¥à¥µ¥¤¥º4',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+  'È¾ÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë' => 'È¾ÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'Âç»Í¤ÄÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë' => 'Âç»Í¤ÄÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => '»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => 'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+						     )
+				       ),
+
+
+array('Column' => 'memo42',
+					'Label' => 'Ëç¿ô4',
+				    'Draw' => 'text'),
+
+
+
+array('Column' => 'bui5',
+					'Label' => 'Éô°Ì5',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      'Ã±½ãÆ¬Éô' => 'Ã±½ãÆ¬Éô',
+ 'Ã±½ã¶»Éô' => 'Ã±½ã¶»Éô',
+ 'Ã±½ãÊ¢Éô' => 'Ã±½ãÊ¢Éô',
+ 'Ã±½ã¹üÈ×¹Ð' => 'Ã±½ã¹üÈ×¹Ð',
+ 'Â¤±ÆÆ¬Éô' => 'Â¤±ÆÆ¬Éô',
+ 'Â¤±Æ¶»Éô' => 'Â¤±Æ¶»Éô',
+ 'Â¤±ÆÊ¢Éô' => 'Â¤±ÆÊ¢Éô',
+ 'Â¤±Æ¹üÈ×¹Ð' => 'Â¤±Æ¹üÈ×¹Ð',
+ '¶»Éô' => '¶»Éô',
+ 'Ê¢Éô' => 'Ê¢Éô',
+ 'Æ¬Éô' => 'Æ¬Éô',
+ '·ÛÄÇ' => '·ÛÄÇ',
+ '¶»ÄÇ' => '¶»ÄÇ',
+ '¹øÄÇ' => '¹øÄÇ',
+ '¹üÈ×' => '¹üÈ×',
+ 'º¿¹ü' => 'º¿¹ü',
+ '¶»¹ü' => '¶»¹ü',
+ '¸ª´ØÀá' => '¸ª´ØÀá',
+ 
+ '¾åÏÓ' => '¾åÏÓ',
+ 'Éª´ØÀá' => 'Éª´ØÀá',
+ 'Á°ÏÓ' => 'Á°ÏÓ',
+ '¼ê´ØÀá' => '¼ê´ØÀá',
+ '¼ê»Ø' => '¼ê»Ø',
+ '¸Ô´ØÀá' => '¸Ô´ØÀá',
+ '²¼ÂÜ' => '²¼ÂÜ',
+
+ 'Â­´ØÀá' => 'Â­´ØÀá',
+ '£Í£Ä£Ì' => '£Í£Ä£Ì',
+ '£Ä£Ä£Ì' => '£Ä£Ä£Ì',
+ '£Ä£É£Ã' => '£Ä£É£Ã',
+ '£Ä£É£Ð' => '£Ä£É£Ð',
+ '£Ë£Õ£Â' => '£Ë£Õ£Â',
+ '£Õ£Ö£Ç' => '£Õ£Ö£Ç',
+ '£Ú£Ç' => '£Ú£Ç',
+ '¹ü±öÄêÎÌ' => '¹ü±öÄêÎÌ',
+'¸Ô´ØÀáÀµÌÌÁü' => '¸Ô´ØÀáÀµÌÌÁü',
+'¸Ô´ØÀá¼Ð°ÌÁü' => '¸Ô´ØÀá¼Ð°ÌÁü',
+ '¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+
+ )
+),
+array('Column' => 'memo51',
+					'Label' => '¥Õ¥£¥ë¥à¥µ¥¤¥º5',
+				   
+				       'Draw' => 'enum',
+				       'Enum' => array('' => '',
+						      
+  'È¾ÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë' => 'È¾ÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'Âç»Í¤ÄÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë' => 'Âç»Í¤ÄÀÚ¡Ê¥Ç¥¸¥¿¥ë¥Õ¥£¥ë¥à¡Ë',
+'»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => '»Í¤ÄÀÚ¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë' => 'Ï»¤ÄÀÚ¤ê¡Ê¥¢¥Ê¥í¥°¥Õ¥£¥ë¥à¡Ë',
+'¤½¤ÎÂ¾' => '¤½¤ÎÂ¾'
+						     )
+				       ),
+
+
+array('Column' => 'memo52',
+					'Label' => 'Ëç¿ô5',
+				    'Draw' => 'text'),
+
+
+
+array('Column' => 'drsyoken',
+'Label' => '°å»Õ½ê¸«',
+'Draw' => 'textarea',
+'Option' => array('vocab' => array('SOLdoc'),
+'cols' => 80)
+),
+
+array('Column' => 'techsyoken',
+'Label' => 'µ»»Õ¥³¥á¥ó¥È',
+'Draw' => 'textarea',
+'Option' => array('vocab' => array('SOLgishi'),
+'cols' => 80)
+),
+
+
+ array('Column' => 'proof',
+'Label' => '¼Â»Ü¡¦Ì¤¡¦ºÑ¡¦¾µÇ§',
+
+				       'Draw' => 'enum',
+				       'Enum' => array('Ì¤¼Â»Ü' => 'Ì¤¼Â»Ü',
+						       '°å»Õ¼Â»Ü' => '°å»Õ¼Â»Ü',
+						       'µ»»Õ¼Â»Ü' => 'µ»»Õ¼Â»Ü',
+						       '°å»Õ¾µÇ§' => '°å»Õ¾µÇ§'
+						     ),
+				       'Option' => array('validate' =>
+							 'nonnull'))
+
+)
+), $cfg);
+	return $cfg;
+}
+
+class list_of_xctorders extends list_of_ppa_objects {
+	function list_of_xctorders($prefix, &$cfg) {
+		if (is_null($cfg))
+			$cfg = array();
+		$cfg = __lib_u_doctor_xctorder_cfg($cfg);
+		list_of_ppa_objects::list_of_ppa_objects($prefix, $cfg);
+	}
+}
+
+class xctorder_display extends simple_object_display {
+	function xctorder_display($prefix, &$cfg) {
+		if (is_null($cfg))
+			$cfg = array();
+		$cfg = __lib_u_doctor_xctorder_cfg($cfg);
+		simple_object_display::simple_object_display($prefix, $cfg);
+	}
+
+/* function print_sod() {
+    go_pdf($this->id, 0);
+  }
+
+
+} */
+
+function print_sod($template='srl') {
+    $db = mx_db_connect();
+
+    $oid = $this->id;
+    $stmt = 'SELECT "ID" from "xctorder" WHERE "ObjectID"=' . $oid;
+    $rs = mx_db_fetch_single($db, $stmt);
+    if(is_null($rs))
+      return;
+
+    $status = 0;
+   
+    
+    $s =  <<< HTML
+    <SCRIPT LANGUAGE="JavaScript">
+       window.open("print12.php?test_app_type=${test_app_type}&status=${status}&oid={$oid}", "","width=640,height=640");
+    </SCRIPT>
+HTML;
+    print $s;
+  }
+
+}
+
+
+class xctorder_edit extends simple_object_edit {
+	function xctorder_edit($prefix, &$cfg) {
+		if (is_null($cfg))
+			$cfg = array();
+		$cfg = __lib_u_doctor_xctorder_cfg($cfg);
+		simple_object_edit::simple_object_edit($prefix, $cfg);
+	}
+
+
+function commit($force=NULL) {
+  
+
+    $this->data['´µ¼Ô'] = $this->so_config['Patient_ObjectID'];
+
+    $db = mx_db_connect();
+    $date = $this->data['procdate'];
+ $patient_objectid = $this->data['´µ¼Ô'];
+/* 0408-2011*/
+
+ simple_object_edit::commit($force); 
+  
+    
+
+/* always claim_request */
+
+$urgent = 0;
+if (preg_match('/^(\d{4})-(\d+)-(\d+) /', $date, &$match)) {
+	    $date = sprintf("%s-%s-%s", $match[1], $match[2], $match[3]);}
+
+$stmt = 'INSERT INTO claim_request (patient, date_since, date_until, utime, result_flag) values ('. $patient_objectid.","."'". $date."'".",". "'". $date."'".","."current_timestamp".",".$urgent.")";
+
+print $stmt;
+  
+	 pg_query($db, $stmt); 
+
+
+
+     
+  }
+
+
+
+ function anew_tweak($orig_id) {
+		$this->data['orderdate'] = mx_today_string();
+		
+		
+	} 
+
+
+	/* could inherit from simple_object_ppa_edit */
+	
+/* 0407-2011 change  
+function commit($force=NULL) {
+		$this->data['´µ¼Ô'] = $this->so_config['Patient_ObjectID'];
+	
+
+		return simple_object_edit::commit($force);
+	}  */
+
+}
+?>
+

@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta content="text/html; charset=EUC-JP" http-equiv="content-type" /><title>form01</title></head>
+<body>
+<table style="text-align: left; width: 601px;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+<tr>
+      <td style="vertical-align: top; width: 85px;"> @@患者台帳.氏名@@<br />
+      </td>
+      <td style="vertical-align: top; width: 86px;">@@患者台帳.性別@@<br />
+      </td>
+      <td style="vertical-align: top; width: 404px;">@@患者台帳.生年月日@@生<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;">Doctor: <br />
+      </td>
+      <td style="vertical-align: top; width: 86px;">@@ユーザ.氏名@@<br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;">Sus/Conf<br />
+      </td>
+      <td style="vertical-align: top; width: 86px;">Class<br />
+      </td>
+      <td style="vertical-align: top; width: 404px;">Title <br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;">@@kenshin-X-a0@@<br />
+      </td>
+      <td style="vertical-align: top; width: 86px;">@@kenshin-X-b0@@<br />
+      </td>
+      <td style="vertical-align: top; width: 404px;">食道憩室	[Diverticulum]<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;">@@kenshin-X-a1@@<br />
+      </td>
+      <td style="vertical-align: top; width: 86px;">@@kenshin-X-b1@@<br />
+      </td>
+      <td style="vertical-align: top; width: 404px;">食道裂孔ヘルニア [Hiatal Hernia]<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;">@@kenshin-X-a3@@<br />
+      </td>
+      <td style="vertical-align: top; width: 86px;">@@kenshin-X-b3@@<br />
+      </td>
+      <td style="vertical-align: top; width: 404px;">食道ポリープ [Polyp(s)]
+<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;">@@kenshin-X-a4@@<br />
+      </td>
+      <td style="vertical-align: top; width: 86px;">@@kenshin-X-b4@@<br />
+      </td>
+      <td style="vertical-align: top; width: 404px;">食道炎 [Esophagitis]
+<br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 85px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 86px;"><br />
+      </td>
+      <td style="vertical-align: top; width: 404px;"><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <br />
+</body>
+</html>

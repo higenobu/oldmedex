@@ -1,0 +1,553 @@
+* {
+    background-color: transparent;
+    font-size: 9pt;
+    font-family: sans, sans-serif, gothic;
+}
+pre {
+    background-color: transparent;
+    font-size: 9pt;
+    font-family: monospace;
+}
+input {
+    background-color: #fff;
+}
+input[type="text"].value {
+    text-align: right;
+}
+textarea {
+    background-color: #fff;
+}
+select {
+    background-color: #fff;
+}
+body {
+    background-color: #ccf;
+}
+option {
+    background-color: #fec;
+}
+a:visited, a:link {
+    color: #360;
+}
+a:hover {
+    color: #888;
+}
+a img {
+    border-width: 0;
+}
+table.wide {
+    width: 100%;
+}
+table.flippage {
+    border-collapse: collapse;
+}
+table.flippage * td.focused {
+    background-color: #c90;
+    white-space: nowrap;
+}
+table.flippage * td.unfocused {
+    background-color: #ffc;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    white-space: nowrap;
+    cursor: pointer;
+}
+table.flippage * td.ltcorner {
+    background-image: url(images/ltcorner.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+table.flippage * td.rtcorner {
+    background-image: url(images/rtcorner.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+table.random-format {
+    border-collapse: collapse;
+}
+table.random-format th {
+    white-space: nowrap;
+    background-color: #884;
+    border: solid 1px;
+    text-align: left;
+    vertical-align: top;
+}
+table.random-format td {
+    border: solid 1px;
+    text-align: left;
+    vertical-align: top;
+}
+table.random-format-historical {
+    border-collapse: collapse;
+}
+table.random-format-historical th {
+    white-space: nowrap;
+    background-color: #c44;
+    border: solid 1px;
+    text-align: left;
+    vertical-align: top;
+}
+table.random-format-historical td {
+    border: solid 1px;
+    text-align: left;
+    vertical-align: top;
+}
+table.random-format td.changed {
+    background-color: #fc8;
+}
+table.random-format-historical td.changed {
+    text-decoration: line-through;
+    background-color: #fc8;
+}
+table.tabular-data th {
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #ffe;
+}
+table.tabular-data th.darker {
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #fdd;
+}
+table.tabular-data th.group_head {
+    background-color: #ffc;
+}
+table.tabular-data * td.changed {
+    vertical-align: top;
+    text-align: left;
+    background-color: #fc8;
+}
+table.tabular-data * td {
+    background-color: #fff;
+    vertical-align: top;
+    text-align: left;
+}
+div.login-logo { /* unfortunate */
+    text-align: center;
+}
+div.login-logo table {
+    margin-left: auto;
+    margin-right: auto;
+}
+div.qbe {
+    padding: 2px;
+}
+div#ppa-applink {
+    margin: 4px;
+    padding: 20px;
+    border: 4px;
+    border-style: double;
+    background-color: #ffc;
+}
+div.appbar-item:hover {
+    background-color: #ccc;
+}
+div.appbar-elem {
+    margin: 4px;
+    padding: 10px;
+    border: 4px;
+    border-style: double;
+    background-color: #fff;
+    color: #33f;
+}
+div.appbar-elem * a {
+    margin: 4px;
+    border: thin;
+    text-decoration: none;
+    color: #33f;
+}
+table.tabular-data tr.qbe-bo-entry td {
+    border-top-color: #888;
+    border-top-style: solid;
+}
+table.historical-data * th {
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+    background-color: #f88;
+    color: #fff;
+}
+table.historical-data * td.changed {
+    vertical-align: top;
+    text-align: left;
+    text-decoration: line-through;
+    background-color: #fc8;
+}
+table.historical-data * td {
+    vertical-align: top;
+    text-align: left;
+}
+table.calendar {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+div.soecal * td {
+    text-align: center;
+}
+table.calendar td {
+    width: 10px;
+    padding: 0px;
+    text-align: center;
+}
+button {
+    cursor: pointer;
+}   
+button.plain {
+    border: none;
+    background: transparent;
+}
+button.keyboard {
+    background-color: transparent;
+    font-size: 9pt;
+    font-family: monospace;
+}
+span.link {
+    color: #008;
+    background: transparent;
+    text-decoration: underline;
+}
+span.heading,
+span.appname {
+    color: #c00;
+    font-weight: bold;
+}
+span.appname {
+    font-size: 160%;
+}
+span.heading {
+    font-size: 120%;
+}
+span.small_heading {
+    color: #c00;
+    font-size: 110%;
+    font-weight: bold;
+}
+div.fold_group {
+    font-size: 110%;
+    font-weight: bold;
+    background-color: #ee8;
+}
+div.foldable_group {
+    padding: 2px;
+    margin: 4px;
+    border: solid;
+    border-width: thin;
+    border-color: #ccc;
+}
+span.title {
+    font-size: 130%;
+    font-weight: bold;
+}
+div.confirm-message {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 120%;
+    font-weight: bold;
+}
+div.confirm-control {
+    text-align: center;
+}
+td.twoside-right {
+    border-left: solid;
+    border-width: thin;
+    border-color: #888;
+}
+p.hidden-pass-data {
+    display: none
+}
+div.foldTemplate * li {
+    list-style-type: none;
+}
+div.vocab {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 1em;
+    background: #fff;
+    border-style: ridge;
+    border-width: medium;
+    border-color: #00f;
+}
+div.vocab span.title {
+    color: #00f;
+}
+div.vocab div.insn {
+    color: #f00;
+    text-align: right;
+    padding: 4px;
+}
+div.vocab div.insn span {
+    color: #00f;
+    padding: 2px;
+    margin: 4px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #000;
+    cursor: pointer;
+}
+div.vocab tr.r0 td {
+    color: #fff;
+    background-color: #226;
+}
+div.vocab tr.r1 td {
+    vertical-align: top;
+    color: #0cc;
+    background-color: #448;
+    height: 4em;
+    cursor: pointer;
+}
+div.vocab tr.r2 td {
+    color: #8ff;
+    background-color: #226;
+    height: 2em;
+}
+table.apptcal {
+    border-collapse: collapse;
+}
+table.apptcal td {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: thin;
+}
+table.apptcal td.control {
+    border-style: none;
+    cursor: pointer;
+}
+table.apptcal td.day {
+    text-align: center;
+}
+table.apptcal td.cell {
+    text-align: right;
+    padding-right: 2px;
+    cursor: pointer;
+    color: #000;
+}
+table.apptcal td.crowded {
+    color: #800;
+    background-color: #fcc;
+}
+table.apptcal td.occupied {
+    color: #660;
+    background-color: #ffc;
+}
+table.apptcal td.vacant {
+    color: #084;
+    background-color: #cfc;
+}
+span.nosubmit {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.larger {
+    font-size: 150%;
+    font-weight: bold;
+}
+.smaller {
+    font-size: 80%;
+}
+.invisible {
+    display: none;
+}
+.nagmail-form button.plain {
+    padding: 1px;
+    margin: 4px;
+    border: 2px;
+    border-style: solid;
+    border-color: #ccb;
+    background-color: #ffe;
+}
+/* bmd special */
+body {
+	background-color: #FFFFFF;
+	background-image: url(images/ippo-logo.png);
+	background-position: top right;
+	background-repeat: no-repeat;
+	margin: 0px 0px 0px 0px;
+}
+option {
+    background-color: #fff;
+}
+
+table.tabular-data td {
+    background-color: #fff5ee;
+}
+table.tabular-data th {
+    background-color: #ffdab9;
+}
+table.tabular-data th.darker {
+    background-color: #4cc;
+}
+table.tabular-data th.group_head {
+    background-color: #cd853f;
+}
+table.tabular-data td.changed {
+    background-color: #fee;
+}
+div.appbar-elem {
+    color: #338;
+    margin: 0px;
+    padding: 1px;
+    border: 1px;
+    border-style: solid;
+}
+div.appbar-elem * a {
+    color: #338;
+}
+div.login-logo {
+    padding: 50px;
+}
+span.heading, span.appname {
+    color: #26a;
+}
+.login-submit button.plain {
+    padding: 2px;
+    border: 2px;
+    border-style: solid;
+    border-color: #88c;
+    background-color: #ccf;
+}
+
+
+
+/* 08.8.1 update
+---------------------------------------------*/
+body {
+	background-color: #F2F8F9;
+	background-image: url(images/ippo-logo.png);
+	background-position: top right;
+	background-repeat: no-repeat;
+	margin: 0px 0px 0px 0px;
+}
+
+table.tabular-data td {
+	background-color: #FFFFFF;
+}
+table.tabular-data th {
+	background-color: #B6D5DC;
+}
+table.tabular-data th.darker {
+    background-color: #4cc;
+}
+table.tabular-data th.group_head {
+	background-color: #3A70D1;
+}
+table.tabular-data td.changed {
+	background-color: #EEFFFC;
+}
+
+table.listofstuff {
+    border-collapse: collapse;
+    width: 100%;
+}
+table.listofstuff * th {
+	border: solid 1px;
+	text-align: left;
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #B6E1F5;
+	color: #008;
+}
+table.listofstuff tr.o td {
+	background-color: #D7F4FB;
+}
+table.listofstuff tr.e td {
+	background-color: #F0FFFC;
+}
+table.listofstuff tr.boundaryline td {
+    border-bottom-width: 2px;
+}
+table.listofstuff tr td {
+	border: solid 1px;
+	text-align: left;
+	vertical-align: top;
+}
+table.listofstuff tr.y td {
+	background-color: #4199F1;
+	border: solid 1px;
+	text-align: left;
+	vertical-align: top;
+}
+table.listofstuff tr.g td {
+    background-color: #ce4;
+    border: solid 1px;
+    text-align: left;
+    vertical-align: top;
+}
+table.listofstuff tr.r td {
+    background-color: #ff6699;
+    border: solid 1px;
+    text-align: left;
+    vertical-align: top;
+}
+div.appbar-all {
+    padding: 8px;
+}
+div.appbar-one {
+	display: inline;
+	margin: 2px;
+	padding: 4px;
+	border: 1px solid #88c;
+	background-color: #D1E7E6;
+	width: 3em;
+}
+div.appbar-top {
+	display: inline;
+	width: 3em;
+	margin: 2px 4px 2px 2px;
+	padding: 10px 6px 6px;
+	border: 1px solid #B6E1F5;
+	background-color: #4295B9;
+	font-weight:bold;
+}
+div.appbar-one a.appbar-anc {
+	margin: 0px;
+	text-decoration: none;
+	color: #000088;
+}
+a.appbar-anc {
+	margin: 0px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+div.appbar-top a.appbar-anc {
+    margin: 1px;
+    font-size: 13pt;
+}
+.ptsel button.plain {
+	padding: 2px;
+	border: 1px solid #D2E1CE;
+	background-color: #D1F0BF;
+}
+table.flippage * td.focused {
+	background-color: #E4B1AD;
+}
+table.flippage * td.unfocused {
+	background-color: #F5E6AD;
+}
+td.has_errors * {
+	color: #44ffff;
+	background-color: #ff4444;
+}
+td.sealarea {
+	height: 80px;
+	white-space: nowrap;
+}
+div.revctl-old {
+	text-decoration: line-through;
+}
+div.revctl-old:after {
+	content: "\02192";
+}
+div.revctl-current {
+	text-decoration: line-through;
+	background-color: #EEFFFC;
+}
+span.revctl-old {
+	text-decoration: line-through;
+}
+span.revctl-new {
+	text-decoration: underline;
+}

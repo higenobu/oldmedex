@@ -1,0 +1,28 @@
+table.map td.plain {
+  text-align: left;
+  vertical-align: top;
+}
+
+table.map td.cell {
+  width: 200;
+  height: 180;
+  background-color: #9cf;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.map td.spacer {
+  width: 32;
+  text-align: left;
+  vertical-align: center;
+}
+
+table.map td.spacer-bottom {
+  width: 32;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+table.map span.title {
+  color: #c30;
+}
