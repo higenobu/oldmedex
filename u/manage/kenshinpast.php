@@ -16,6 +16,15 @@
 <?php
 
 //11-09-2014 updated for LCM
+//added 
+/*
+
+$ss7=$rs3[0]['ss7'];
+$ss1=$rs3[0]['ss1'];
+$ss0=$rs3[0]['ss0'];
+$cc0=$rs3[0]['cc0'];
+
+*/
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/common.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/ppa.php';
