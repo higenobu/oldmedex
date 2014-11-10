@@ -6,7 +6,20 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/lib/common.php';
 include_once $_SERVER['DOCUMENT_ROOT']. '/lib/u/manage/simple-object.php';
 include_once $_SERVER['DOCUMENT_ROOT']. '/lib/u/doctor/diseasepick.php';
 include_once $_SERVER['DOCUMENT_ROOT']. '/lib/ord_module.php';
-
+//11-10-2014
+function _lib_u_dis_shiji() {
+  $db = mx_db_connect();
+  $stmt = <<<SQL
+    select E."id" as id ,  "name" as name
+    from modalities E where rtype=904
+SQL;
+  $rows =  mx_db_fetch_all($db, $stmt);
+  $ret = array();
+foreach($rows as $row){
+if($row['name']!=null) 
+    $ret[$row['name']] = $row['name'];}
+  return $ret;
+}
 
 function _lib_u_dis_kiroku() {
   $db = mx_db_connect();
@@ -25,7 +38,9 @@ SQL;
 function __lib_u_doctor_patient_disease_config(&$cfg)
 {
 	$acols = array(
-		array('Column' => '記録日', 'Draw' => 'static'),
+array('Column' => 'shiji','Label'=>'指示医', 'Draw' => 'enum','Enum' =>_lib_u_dis_shiji(),
+		      'Option' => array('validate' => 'nonnull')),
+		array('Column' => '記録日', 'Draw' => 'date'),
 		array('Column' => '開始日', 'Draw' => 'date',
 		      'Option' => array('validate' => 'nonnull')),
 		array('Column' => '転帰日', 'Draw' => 'date'),
@@ -327,6 +342,7 @@ function commit($force=NULL) {
     $db = mx_db_connect();
     $date = $this->data['記録日'];
  $patient_objectid = $this->data['患者'];
+$shiji=$this->data['接頭語名'];
 $byomei=$this->data["疾病名"];
 $kaishi=$this->data['開始日'];
 $tenkibi=$this->data['転帰日'];
@@ -350,7 +366,7 @@ $time_to=$date;
 //(&$db, $p_oid, $p_pid, $time_from, $time_to, $options=NULL);
 
 //print_r($returnv);
-$ocont="-----------------------\n"."DISEASE\n".'記録日='.$date.'開始日='.$kaishi.'転帰日='.$tenkibi.'転帰='.$tenki."\n  ".$st." ".$st2." ".$st3." ".$byomei.$bi1.$bi2."\n";
+$ocont="-----------------------\n"."DISEASE\n".'指示医：'.$shiji.'記録日='.$date.'開始日='.$kaishi.'転帰日='.$tenkibi.'転帰='.$tenki."\n  ".$st." ".$st2." ".$st3." ".$byomei.$bi1.$bi2."\n";
 
 //print $ocont;
  

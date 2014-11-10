@@ -5,6 +5,21 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/lib/soe.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/common.php';
 //11-06-3014
 //printml2 or printml3
+//111010-2014 added shiji character varying
+
+function _lib_u_meal_shiji() {
+  $db = mx_db_connect();
+  $stmt = <<<SQL
+    select E."id" as id ,  "name" as name
+    from modalities E where rtype=904
+SQL;
+  $rows =  mx_db_fetch_all($db, $stmt);
+  $ret = array();
+  foreach($rows as $row){
+if($row['name']!=null) 
+    $ret[$row['name']] = $row['name'];}
+  return $ret;
+}
 
 function mk_enum2($a) {
 	$r = array();
@@ -17,6 +32,7 @@ function mk_enum2($a) {
 	}
 	return $r;
 }
+
 
 $__lib_u_nutrition_meal_nutri_category_enum = array
 (
@@ -108,6 +124,15 @@ $__lib_u_nutrition_meal_nutri_all_cols = array(
 	      'Enum' => mk_enum2($__lib_u_nutrition_meal_nutri_category_enum),
 	      'Option' => array('list' => 1),
 	      ),
+
+array('Column' => 'shiji',
+	      'Label' => '指示医',
+	      'Draw' => 'enum',
+	      'Enum' =>_lib_u_meal_shiji(),
+	      'Option' => array('validate' => 'nonnull', 'list' => 1),
+	      ),
+
+
 	array('Column' => 'addition',
 	      'Label' => '特別加算',
 	      'Draw' => 'enum',
@@ -271,9 +296,13 @@ $__lib_u_nutrition_meal_nutri_order_cfg['DCOLS'] = array();
 $__lib_u_nutrition_meal_nutri_order_cfg['D_RANDOM_LAYOUT'] = array(
 
 	array('Label' => '記録者'),
-	array('Insn' => 'CreatedBy', 'Span' => 3),
+	array('Insn' => 'CreatedBy', 'Span' => 2),
 	array('Label' => '記録'),
-	array('Column' => 'recorded', 'Span' => 3),
+	array('Column' => 'recorded', 'Span' => 2),
+//11-10-2014
+array('Label' => '指示医'),
+array('Column'=>'shiji','Span' => 1),
+
 	array('Insn' => '//'),
 
 	array('Label' => '処方日'),
@@ -371,9 +400,12 @@ $__lib_u_nutrition_meal_nutri_order_cfg['D_RANDOM_LAYOUT'] = array(
 $__lib_u_nutrition_meal_nutri_order_cfg['E_RANDOM_LAYOUT'] = array(
 
 	array('Column' => 'recompute'),
-	array('Insn' => '  ', 'Span' => 3),
+	array('Insn' => '  ', 'Span' => 2),
 	array('Label' => '記録'),
-	array('Column' => 'recorded', 'Span' => 3),
+	array('Column' => 'recorded', 'Span' => 2),
+//11-10-2014
+array('Label' => '指示医'),
+array('Column'=>'shiji','Span' => 1),
 	array('Insn' => '//'),
 
 	array('Label' => '処方日'),
@@ -693,7 +725,8 @@ $st3=$name[$this->data['nu_order']];
 $bi1=$this->data["notes"];
 $bi2=$this->data["allergies"];
 
-$ocont="----------------------------\n"."MEAL\n".'オーダ='.$date.'開始日='.$kaishi.'いつまで='.$tenkibi."\n  "."TYPE=".$byomei." "."内容=".$st."  SHAPE=".$st2." NUTR=".$st3." ".$bi1." ".$bi2."\n";
+$ocont="----------------------------\n"."MEAL\n".'指示医：'.$tenki.
+'オーダ='.$date.'開始日:'.$kaishi.'いつまで:'.$tenkibi."\n  "."TYPE:".$byomei." "."内容:".$st."  SHAPE:".$st2." NUTR:".$st3." ".$bi1." ".$bi2."\n";
 
 //print $ocont;
  
@@ -769,8 +802,8 @@ if (preg_match('/^(\d{4})-(\d+)-(\d+) /', $date, &$match)) {
 	    $date = sprintf("%s-%s-%s", $match[1], $match[2], $match[3]);}
 
 $stmt = 'INSERT INTO claim_request (patient, date_since, date_until, utime, result_flag) values ('. $patient_objectid.","."'". $date."'".",". "'". $date."'".","."current_timestamp".",".$urgent.")";
-print "Claim insert";
-print $stmt;
+//print "Claim insert";
+//print $stmt;
   
 	 pg_query($db, $stmt); 
 

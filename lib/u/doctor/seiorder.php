@@ -55,9 +55,10 @@ $id_col = 'id';
     from modalities E where rtype=904
 SQL;
   $rows =  mx_db_fetch_all($db, $stmt);
-  $ret = array(NULL => '');
-  foreach($rows as $row)
-    $ret[$row['name']] = $row['name'];
+  $ret = array();
+  foreach($rows as $row){
+if($row['name']!=null) 
+    $ret[$row['name']] = $row['name'];}
   return $ret;
 }
 

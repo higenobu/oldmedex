@@ -7,6 +7,19 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/lib/common.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/ppa.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/doctor/pdf4-xct.php';
 //10-29-2014 revised added karte insert
+function _lib_u_xct_shiji() {
+  $db = mx_db_connect();
+  $stmt = <<<SQL
+    select E."id" as id ,  "name" as name
+    from modalities E where rtype=904
+SQL;
+  $rows =  mx_db_fetch_all($db, $stmt);
+  $ret = array();
+  foreach($rows as $row){
+if($row['name']!=null) 
+    $ret[$row['name']] = $row['name'];}
+  return $ret;
+}
 
 function _lib_u_xct_kiroku3() {
   $db = mx_db_connect();
@@ -192,7 +205,7 @@ array('Column' => 'shiji',
 					'Label' => '»Ø¼¨°å',
 				   
 				       'Draw' => 'enum',
-				         'Enum' =>_lib_u_xct_kiroku3(),
+				         'Enum' =>_lib_u_xct_shiji(),
 
 				       ),
 
@@ -315,7 +328,7 @@ array('Column' => 'shiji',
 					'Label' => '»Ø¼¨°å',
 				   
 				      'Draw' => 'enum',
-				         'Enum' =>_lib_u_xct_kiroku3(),
+				         'Enum' =>_lib_u_xct_shiji(),
 				        
 
 				       ),
@@ -465,7 +478,7 @@ array('Column' => 'xctkubun',
 				       ),
 
 
-array('Column' => 'shiji', 'Draw' => 'enum', 'Enum' =>_lib_u_xct_kiroku3(),
+array('Column' => 'shiji', 'Draw' => 'enum', 'Enum' =>_lib_u_xct_shiji(),
 		      'Option' => array('validate' => 'nonnull')),
 
 array('Column' => 'gishi',

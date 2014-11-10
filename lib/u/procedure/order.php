@@ -7,7 +7,21 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/manage/proceduremaster-pick.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/procedure/procedureset-pick.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/procedure/procedurecategory-pick.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lib/u/procedure/proceduremaster2-pick.php';
-
+//11-10-2014
+function _lib_u_proc_shiji() {
+  $db = mx_db_connect();
+  $stmt = <<<SQL
+    select E."id" as id ,  "name" as name
+    from modalities E where rtype=904
+SQL;
+  $rows =  mx_db_fetch_all($db, $stmt);
+  $ret = array();
+  foreach($rows as $row){
+if($row['name']!=null) 
+    $ret[$row['name']] = $row['name'];}
+  return $ret;
+}
+//
 $_lib_u_procedure_order_base_stmt =
 'SELECT O."ObjectID" as "ProcedureOrderID", O.*, (E."姓" || E."名") AS "Orderer",
  O."OrderDate", O."ExecDate"
@@ -20,10 +34,18 @@ $_lib_u_procedure_order_cfg = array
  'TABLE' => 'procedure_order',
  'ALLOW_SORT' => 1,
  'DEFAULT_SORT' => 'OrderDate',
- 'COLS' => array('ProcedureOrderID', 'ProcedureName', 'title'),
+ 'COLS' => array('ProcedureOrderID', 'ProcedureName', 'title',
+	array('Column' => 'shiji',
+			 'Label' => '指示医',
+			 'Draw' => 'enum',
+			 'Enum' => _lib_u_proc_shiji(),
+			 'Option' => array('validate' => 'nonnull'),
+			 ),
+
+),
  'LCOLS' => array(
 		  array('Column' => 'OrderDate',
-			'Label' => '依頼日',
+			'Label' => '依頼日時',
 			'Draw' => 'timestamp',
 			'Option' => array('to-seconds' => -1)
 			),
@@ -34,7 +56,7 @@ $_lib_u_procedure_order_cfg = array
 		  array('Column' => 'part',
 			'Label' => '部位'),
 		  array('Column' => 'Cancelled',
-			'Label' => '中止日',
+			'Label' => '中止日時',
 			'Draw' => 'timestamp',
 			'Option' => array('to-seconds' => -1)
 			),
@@ -44,13 +66,19 @@ $_lib_u_procedure_order_cfg = array
 			 'Draw' => 'mx_authenticate',
 			 ),
 		  */
+		array('Column' => 'shiji',
+			 'Label' => '指示医',
+			 'Draw' => 'enum',
+			 'Enum' => _lib_u_proc_shiji(),
+			 'Option' => array('validate' => 'nonnull'),
+			 ),
 		  ),
  'ECOLS' => array (array('Column' => 'ObjectID', 'Draw' => NULL),
 		   array('Column' => 'OrderDate',
-			 'Label' => '依頼日',
+			 'Label' => '依頼日時',
 			 'Draw' => 'static'),
 		   array('Column' => 'ExecDate',
-			 'Label' => '実施日',
+			 'Label' => '実施日時',
 			 'Draw' => 'timestamp',
 			'Option' => array('to-seconds' => -1)
 			 ),
@@ -67,16 +95,24 @@ $_lib_u_procedure_order_cfg = array
 			 'Label' => '備考',
 			 'Draw' => 'textarea'
 			 ),
-array('Column' => 'recorded',
-'Label' => '記録', 'Draw' => 'timestamp')
+		array('Column' => 'shiji',
+			 'Label' => '指示医',
+			 'Draw' => 'enum',
+			 'Enum' => _lib_u_proc_shiji(),
+			 'Option' => array('validate' => 'nonnull'),
+			 ),
+
+			
+		array('Column' => 'recorded',
+		'Label' => '記録', 'Draw' => 'timestamp')
 		   ),
  'DCOLS' => array (array('Column' => 'OrderDate',
-			 'Label' => '依頼日',
+			 'Label' => '依頼日時',
 			 'Draw' => 'timestamp',
 			'Option' => array('to-seconds' => -1)
 			 ),
 		   array('Column' => 'ExecDate',
-			 'Label' => '実施日',
+			 'Label' => '実施日時',
 			 'Draw' => 'timestamp',
 			'Option' => array('to-seconds' => -1)
 			 ),
@@ -94,7 +130,7 @@ array('Column' => 'recorded',
 			 'Draw' => 'textarea'
 			 ),
 		   array('Column' => 'Cancelled',
-			 'Label' => '中止日',
+			 'Label' => '中止日時',
 			 'Draw' => 'timestamp',
 			'Option' => array('to-seconds' => -1)
 			 ),
@@ -102,10 +138,17 @@ array('Column' => 'recorded',
 			 'Label' => '中止記入者',
 			 'Draw' => 'mx_authenticate',
 			 ),
+		array('Column' => 'shiji',
+			 'Label' => '指示医',
+			 'Draw' => 'enum',
+			 'Enum' => _lib_u_proc_shiji(),
+			 'Option' => array('validate' => 'nonnull'),
+			 ),
+
 array('Column' => 'recorded',
 'Label' => '記録', 'Draw' => 'timestamp')
 		   ),
- 'ICOLS' => array ('OrderDate', 'Patient', 'ExecDate', 'title', 'part', 'comment','recorded'),
+ 'ICOLS' => array ('OrderDate', 'Patient', 'ExecDate', 'title', 'part', 'comment','recorded','shiji'),
  'HSTMT' => $_lib_u_procedure_order_base_stmt . ' WHERE (NULL IS NULL) ',
  'STMT' => $_lib_u_procedure_order_base_stmt . ' WHERE (O."Superseded" IS NULL) ',
  'UNIQ_ID' => 'O."ObjectID"'
@@ -463,6 +506,9 @@ $wkid = $this->data['ObjectID'];
 $kaishi = $this->data['OrderDate'];
 $date=substr($kaishi,0,10);
 $p_oid = $this->data['Patient'];
+$shiji = $this->data['shiji'];
+$cancel=$this->data['Cancelled'];
+print $cancel;
 //using fetch_data
 $insdata= _lib_u_procedure_order_fetch_data(&$this, $wkid);
 $ocont="";
@@ -473,11 +519,11 @@ $pp= $insdata['Procedure'][$i]['ProcedureName'];
 $aa= $insdata['Procedure'][$i]['amount'];
 $dd= $insdata['Procedure'][$i]['duration'];
 
-$ocont=$ocont."Category=".$cc." Proc-name=".$pp." Proc amount=".$aa."Proc Duration=".$dd.
-"  |\n";
+$ocont=$ocont."分類=".$cc." 処置名=".$pp." 回数/量=".$aa." 時間=".$dd.
+"  \n";
 }
 
-$ocont="------------------\n"."処置"."\n".$ocont;
+$ocont="------------------\n"."処置"."\n"."指示医：".$shiji." ".$ocont." ".$cancel."(C)";
 
 
 $db = mx_db_connect();

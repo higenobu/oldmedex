@@ -38,6 +38,24 @@ function get_arriving() {
 	       '50' => '´°Î»',
 	       );
 }
+//11-10-2014
+function _lib_u_test_shiji() {
+  $db = mx_db_connect();
+  $stmt = <<<SQL
+    select E."id" as id ,  "name" as name
+    from modalities E where rtype=904
+SQL;
+  $rows =  mx_db_fetch_all($db, $stmt);
+  $ret = array();
+  foreach($rows as $row){
+if($row['name']!=null) 
+    $ret[$row['name']] = $row['name'];}
+  return $ret;
+}
+
+
+
+//
 function _lib_u_test_get_doctors11() {
   global $_mx_employee_labosystemcode;
 $_mx_employee_labosystemcode= "LaboSystemCode";
@@ -276,7 +294,7 @@ $_lib_u_test_order_cfg = array
 		  array('Column' => 'DrCode',
 			'Label' => '»Ø¼¨°å',
 			'Draw' => 'enum',
-			'Enum' => _lib_u_test_get_doctors3(),
+			'Enum' => _lib_u_test_shiji(),
 			),
 		  array('Column' => 'title',
 			'Label' => '¸¡ºº¥¿¥¤¥È¥ë',
@@ -308,7 +326,7 @@ $_lib_u_test_order_cfg = array
 		   array('Column' => 'DrCode',
 			 'Label' => '»Ø¼¨°å',
 			 'Draw' => 'enum',
-			 'Enum' => _lib_u_test_get_doctors3(),
+			 'Enum' => _lib_u_test_shiji(),
 			 'Option' => array('validate' => 'nonnull'),
 			 ),
 		   array('Column' => 'OrderDate',
@@ -384,7 +402,7 @@ array('Column' => 'recorded',
 		   array('Column' => 'DrCode',
 			 'Label' => '»Ø¼¨°å',
 			 'Draw' => 'enum',
-			 'Enum' => _lib_u_test_get_doctors3(),
+			 'Enum' => _lib_u_test_shiji(),
 			 ),
 		   array('Column' => 'title',
 			 'Label' => '¸¡ºº¥¿¥¤¥È¥ë'),
@@ -1178,7 +1196,7 @@ $orderdate = $this->data['OrderDate'];
 $arrival=$this->data['ArrivalDate'];
 $date=substr($orderdate,0,10);
 $p_oid = $this->data['Patient'];
-
+$shiji=$this->data['DrCode'];
 $ocont="";
 // $aaa['Test'][]
 for ($i=0;$i<count($aaa['Test']);$i++){
@@ -1190,7 +1208,7 @@ $pp= $aaa['Test'][$i]['TestName'];
 $ocont=$ocont. $pp." :".$aa.
 "  \n";
 }
-print $ocont;
+$ocont="»Ø¼¨°å¡§".$shiji."  ". $ocont;
 
 $ocont="------------------\n"."TEST". "¸¡ºº¹àÌÜ="."\n".$ocont;
 
